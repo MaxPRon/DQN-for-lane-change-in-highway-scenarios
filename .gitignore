@@ -1,0 +1,5 @@
+#Ignore different folders in any scenario
+**/training
+**/plots
+**/trained_models
+
