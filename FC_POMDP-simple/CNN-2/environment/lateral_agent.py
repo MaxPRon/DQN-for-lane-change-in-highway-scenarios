@@ -87,7 +87,7 @@ class lateral_control:
 
         return self.params, end - start
 
-    def steering(self, s):
+    def steering_func(self, s):
         Vec, dVec, ddVec = self.quintic(s)
         #func = np.dot(Vec, self.params)
         dfunc = np.dot(dVec, self.params)
@@ -146,7 +146,7 @@ class lateral_control:
 
     def y_acceleration(self,s,v):
 
-        _ = self.steering(s)
+        _ = self.steering_func(s)
         self.beta = np.arctan(np.multiply(np.divide(self.lr, (self.lr + self.lf)), np.tan(self.delta))) #Correct
 
         self.y_acc = (v*v)*np.sin(self.beta)*np.cos(self.beta)
