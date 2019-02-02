@@ -33,7 +33,7 @@ def vectorize_state(state):
 def relative_state(state):
 
     for id_n in range(len(state)-1,-1,-1):
-        state[id_n].x = state[id_n].x-state[0].x
+        state[id_n].x = state[id_n].x - state[0].x
         state[id_n].y = state[id_n].y - state[0].y
         state[id_n].v = state[id_n].v - state[0].v
 
@@ -100,7 +100,7 @@ action = np.zeros(1) # acc/steer
 
 #### Plot variables ####
 max_timestep = 700
-average_window = 50
+average_window = 100
 finished = 0
 x_ego_list = np.zeros((random_sweep,max_timestep))
 y_ego_list = np.zeros((random_sweep,max_timestep))
@@ -126,7 +126,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_06/"
+    path_save = folder_path+ "testing_n_02/"
 
     ## Set up networks ##
 
@@ -187,7 +187,7 @@ for r_seed in range(0,random_sweep):
                         action = sess.run(mainQN.action_pred,feed_dict={mainQN.input_state:[state_v]})
                         #print("Network")
 
-                state1, reward,done = env.step(action)
+                state1, reward, done = env.step(action)
                 state1 = relative_state(state1)
                 state1_v = vectorize_state(state1)
 
@@ -280,7 +280,7 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
                 file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: Global Reward, Long training \n\n\n\n')
+                file.write('REMARKS: Fixed relative error\n\n\n\n')
 
                 file.write("self.reward = 0 \
                             self.reward -= (self.y_acc ** 2) * 0.12 \

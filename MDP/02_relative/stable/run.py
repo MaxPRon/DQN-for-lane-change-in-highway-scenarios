@@ -79,9 +79,9 @@ estep = 100000
 
 #### Learning Parameters ####
 
-max_train_episodes = 100000
+max_train_episodes = 15000
 pre_train_steps = 100000
-random_sweep = 10
+random_sweep = 3
 tau = 1
 
 
@@ -111,7 +111,7 @@ trainables = tf. trainable_variables()
 
 targetOps = q_learning.updateNetwork(trainables,tau)
 
-random_sweep= 5
+random_sweep= 3
 
 ## Init environment ##
 
