@@ -65,9 +65,11 @@ class World:
             elif (prev == y_random and y_random == 6):
                 y_random = 2
             x_random = alist[n]
-            v_random = random.random() * self.speed_limit * 0.4
+            v_random = random.random() * self.non_ego_limit
+            # print(v_random)
             if y_random == 6:
-                self.vehicle_list.append(car.Car(x_random, y_random, v_random * 1.3, 0, speed_limit, self.dt))
+                self.vehicle_list.append(
+                    car.Car(x_random + random.random() * 300, y_random, -v_random, 0, -speed_limit, self.dt))
             elif (y_random == 2):
                 self.vehicle_list.append(car.Car(x_random, y_random, v_random, 0, speed_limit, self.dt))
             prev = y_random
@@ -167,13 +169,18 @@ class World:
 
         ego.motion(self.x_acc, 0)
         self.vehicle_list[0] = ego
-
         # Non-Ego Action
-        for n in range(1,self.n_cars+1):
+        for n in range(1, self.n_cars + 1):
             vehicle = self.vehicle_list[n]
-            #acc, dist = self.IDM(n)
-            acc = self.dist_control(n)
-            vehicle.non_ego_motion(acc,0)
+            # acc, dist = self.IDM(n)
+            if vehicle.y == 2:
+                acc = self.dist_control(n)
+                vehicle.non_ego_motion(acc, 0)
+            elif (vehicle.y == 6):
+                acc = self.dist_control_reversed(n)
+                vehicle.non_ego_motion_reversed(acc, 0)
+                # print("Backdriving: ",vehicle.v)
+            # vehicle.non_ego_motion(acc,0)
             self.vehicle_list[n] = vehicle
 
         self.reward = self.reward_function()
@@ -261,6 +268,33 @@ class World:
             acc = 0
         #acc += random.random()
         return acc
+
+
+    def dist_control_reversed(self,id):
+
+        alpha =0.5
+        lane = self.vehicle_list[id].y
+        x_pos = self.vehicle_list[id].x
+
+        vehicle_list_sec = [vehicle for vehicle in self.vehicle_list if
+                            vehicle.y <= lane + self.road_width * 0.5 and vehicle.y >= lane - self.road_width * 0.5 and vehicle !=
+                            self.vehicle_list[id] and self.vehicle_list[id].x > vehicle.x]
+
+        # Calculate distance to car in front
+        if len(vehicle_list_sec) == 0:
+
+            acc = -alpha*(self.speed_limit - self.vehicle_list[id].v)
+            if id == 0:
+                self.dist_to_front = -1
+        else:
+            x_front = min(vehicle.x for vehicle in vehicle_list_sec)
+            v_front = [vehicle.v for vehicle in vehicle_list_sec if vehicle.x == x_front]
+            v_ego = self.vehicle_list[id].v
+            dist = x_front - self.vehicle_list[id].x
+            if id == 0:
+                self.dist_to_front = dist
+
+            acc = -alpha*(v_front[0] - v_ego) + 0.25*(alpha**2)*(dist-self.s0)
 
     def reward_function(self):
         self.reward = 0

@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f4612ba-85f2-4f6b-8132-da031bd4f2a7" name="Default Changelist" comment="" />
+    <list default="true" id="3f4612ba-85f2-4f6b-8132-da031bd4f2a7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../FC_POMDP-simple/CNN-2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../FC_POMDP-simple/List-02/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MDP/03_relative/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-2_Test/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stable/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/environment/car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/environment/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_POMDP-occlusion/Occlusion-2_Test/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_POMDP-occlusion/Occlusion-2_Test/environment/car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_POMDP-occlusion/Occlusion-2_Test/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_POMDP-occlusion/Occlusion-2_Test/environment/world_pomdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_POMDP-simple/CNN-2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_POMDP-simple/CNN-2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_POMDP-simple/CNN-2/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_POMDP-simple/CNN-2/environment/car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_POMDP-simple/CNN-2/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_POMDP-simple/CNN-2/environment/world_pomdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_POMDP-simple/List-02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_POMDP-simple/List-02/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_POMDP-simple/List-02/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_POMDP-simple/List-02/environment/car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_POMDP-simple/List-02/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_POMDP-simple/List-02/environment/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/environment/car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/environment/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/run_for.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-2_Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-2_Test/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-2_Test/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-2_Test/environment/car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-2_Test/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-2_Test/environment/world_pomdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/environment/car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/environment/world_pomdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/environment/car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/environment/world.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,13 +131,21 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-404868004">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stable/main_single.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2400">
+            <state relative-caret-position="3405">
               <caret line="235" column="30" selection-start-line="235" selection-start-column="30" selection-end-line="235" selection-end-column="30" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -126,10 +170,9 @@
         <entry file="file://$PROJECT_DIR$/stable/environment/world.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="139">
-              <caret line="130" column="15" selection-start-line="118" selection-end-line="153" selection-end-column="53" />
+              <caret line="131" column="15" selection-start-line="119" selection-end-line="147" selection-end-column="12" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1548238538157" expanded="true" signature="9637:9691" ph="..." />
               </folding>
             </state>
           </provider>
@@ -176,6 +219,9 @@
       <find>update</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -194,12 +240,12 @@
     <option name="width" value="1853" />
     <option name="height" value="1048" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,10 +268,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../POMDP/relative_ovt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -392,6 +439,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="32" width="1853" height="1048" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25027323" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -403,7 +451,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32985386" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32985386" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -420,12 +468,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/stable/environment/world.py</url>
-          <line>115</line>
+          <line>116</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/stable/environment/world.py</url>
-          <line>114</line>
+          <line>115</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
@@ -462,7 +510,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stable/main_single.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2400">
+        <state relative-caret-position="3405">
           <caret line="235" column="30" selection-start-line="235" selection-start-column="30" selection-end-line="235" selection-end-column="30" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -508,10 +556,9 @@
     <entry file="file://$PROJECT_DIR$/stable/environment/world.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
-          <caret line="130" column="15" selection-start-line="118" selection-end-line="153" selection-end-column="53" />
+          <caret line="131" column="15" selection-start-line="119" selection-end-line="147" selection-end-column="12" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1548238538157" expanded="true" signature="9637:9691" ph="..." />
           </folding>
         </state>
       </provider>

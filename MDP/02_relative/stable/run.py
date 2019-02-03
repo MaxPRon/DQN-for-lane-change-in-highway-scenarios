@@ -63,7 +63,7 @@ ego_speed_init = speed_limit
 input_dim = (num_of_cars+1)*3
 output_dim = x_range*num_of_lanes
 hidden_units = 50
-layers = 3
+layers = 4
 clip_value = 5000
 learning_rate = 0.001
 buffer_size = 50000
@@ -123,17 +123,17 @@ reward_episode = 0
 total_steps = 0
 
 done = False
-num_of_episodes = "final"
+num_of_episodes = "8400"
 r_seed = 0
 
 #final_save_path = "./long/model_long_random/modelRL_0_"+str(num_of_episodes)+ ".ckpt"
 #final_save_path = "./models/stable_r0/random_0_Final.ckpt"
 #final_save_path = "./training/testing_13/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
-final_save_path = "./training/testing_02/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
+final_save_path = "./training/testing_n_02/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
 
 
 # Plotting/Testing Envionment
-max_timestep = 600
+max_timestep = 750
 num_tries = 10
 num_of_finished = 0
 

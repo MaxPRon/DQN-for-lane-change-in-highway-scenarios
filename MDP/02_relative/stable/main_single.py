@@ -64,7 +64,7 @@ ego_speed_init = speed_limit
 input_dim = (num_of_cars+1)*3
 output_dim = (x_range*num_of_lanes)
 hidden_units = 50
-layers = 4
+layers = 3
 clip_value = 7500
 learning_rate = 0.001
 buffer_size = 100000
@@ -99,7 +99,7 @@ goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
 
 #### Plot variables ####
-max_timestep = 700
+max_timestep = 750
 average_window = 100
 finished = 0
 x_ego_list = np.zeros((random_sweep,max_timestep))
@@ -126,7 +126,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_n_02/"
+    path_save = folder_path+ "testing_n_03/"
 
     ## Set up networks ##
 
