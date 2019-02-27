@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9353c12-b073-411a-ac24-61e0151380fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../CNN-2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_MDP/02_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/02_relative/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/environment/car.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/environment/world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/main_single.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/run_for.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CNN-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CNN-2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CNN-2/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-2/environment/car.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CNN-2/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-2/environment/world_pomdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CNN-1/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-1/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../List-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../List-01/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../List-01/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../List-01/main_single.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/environment/car.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/environment/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_for.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,32 +94,33 @@
     <session id="-1164381474">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
-          <entry key="project.open.time.0" value="7" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.0" value="8" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="215" />
+          <entry key="py" value="322" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="215" />
+          <entry key="Python" value="322" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="2" />
+          <entry key="py" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="2" />
+          <entry key="Python" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -135,8 +130,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_single.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2265">
-              <caret line="159" column="45" selection-start-line="159" selection-start-column="45" selection-end-line="159" selection-end-column="45" />
+            <state relative-caret-position="340">
+              <caret line="268" column="59" selection-start-line="268" selection-start-column="59" selection-end-line="268" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/run.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -145,19 +152,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environment/venv/lib/python3.5/site-packages/pip-10.0.1-py3.5.egg/pip/_internal/req/req_file.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2520">
-              <caret line="182" column="10" selection-start-line="182" selection-start-column="10" selection-end-line="182" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_for.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1845">
-              <caret line="129" column="26" selection-start-line="129" selection-start-column="26" selection-end-line="129" selection-end-column="26" />
+            <state relative-caret-position="949">
+              <caret line="200" selection-start-line="200" selection-end-line="200" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -168,8 +166,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environment/world.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
-              <caret line="303" selection-start-line="303" selection-end-line="303" />
+            <state relative-caret-position="246">
+              <caret line="180" column="32" selection-start-line="180" selection-start-column="28" selection-end-line="180" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -177,10 +175,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environment/car.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
+            <state relative-caret-position="1590">
               <caret line="106" column="22" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
             </state>
           </provider>
@@ -199,10 +197,11 @@
         <option value="$PROJECT_DIR$/stable/environment/world.py" />
         <option value="$PROJECT_DIR$/stable/run_for.py" />
         <option value="$PROJECT_DIR$/stable/main_single.py" />
-        <option value="$PROJECT_DIR$/run_for.py" />
-        <option value="$PROJECT_DIR$/main_single.py" />
         <option value="$PROJECT_DIR$/environment/world.py" />
         <option value="$PROJECT_DIR$/environment/car.py" />
+        <option value="$PROJECT_DIR$/run_for.py" />
+        <option value="$PROJECT_DIR$/main_single.py" />
+        <option value="$PROJECT_DIR$/run.py" />
       </list>
     </option>
   </component>
@@ -218,7 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,10 +233,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MDP/02_relative" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -253,7 +252,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main_single (1)">
+  <component name="RunManager" selected="Python.run (1)">
     <configuration name="main_single (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="02_relative" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -296,7 +295,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="run (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="02_relative" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -304,11 +303,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stable" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stable/run.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_for (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="02_relative" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_for.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -341,15 +361,17 @@
     <list>
       <item itemvalue="Python.main_single" />
       <item itemvalue="Python.run_for" />
-      <item itemvalue="Python.run" />
       <item itemvalue="Python.main_single (1)" />
+      <item itemvalue="Python.run_for (1)" />
+      <item itemvalue="Python.run (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.run (1)" />
+        <item itemvalue="Python.run_for (1)" />
         <item itemvalue="Python.main_single (1)" />
         <item itemvalue="Python.main_single" />
         <item itemvalue="Python.run_for" />
-        <item itemvalue="Python.run" />
       </list>
     </recent_temporary>
   </component>
@@ -379,12 +401,12 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33924845" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33891213" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39979124" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -425,12 +447,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main_single.py</url>
-          <line>181</line>
+          <line>182</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/run_for.py</url>
-          <line>194</line>
+          <line>195</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
@@ -445,16 +467,6 @@
     <entry file="file://$PROJECT_DIR$/stable/main_single.py" />
     <entry file="file://$PROJECT_DIR$/stable/environment/world.py" />
     <entry file="file://$PROJECT_DIR$/stable/reward_design.py" />
-    <entry file="file://$PROJECT_DIR$/main_single.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2265">
-          <caret line="159" column="45" selection-start-line="159" selection-start-column="45" selection-end-line="159" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/environment/venv/lib/python3.5/site-packages/pip-10.0.1-py3.5.egg/pip/_internal/req/req_file.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2520">
@@ -462,30 +474,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_for.py">
+    <entry file="file://$PROJECT_DIR$/environment/car.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1845">
-          <caret line="129" column="26" selection-start-line="129" selection-start-column="26" selection-end-line="129" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1590">
+          <caret line="106" column="22" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/environment/world.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="303" selection-start-line="303" selection-end-line="303" />
+        <state relative-caret-position="246">
+          <caret line="180" column="32" selection-start-line="180" selection-start-column="28" selection-end-line="180" selection-end-column="32" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environment/car.py">
+    <entry file="file://$PROJECT_DIR$/main_single.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="106" column="22" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
+        <state relative-caret-position="340">
+          <caret line="268" column="59" selection-start-line="268" selection-start-column="59" selection-end-line="268" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_for.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="949">
+          <caret line="200" selection-start-line="200" selection-end-line="200" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="189" lean-forward="true" selection-start-line="189" selection-end-line="189" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

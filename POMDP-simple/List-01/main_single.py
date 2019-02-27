@@ -117,7 +117,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_03/"
+    path_save = folder_path+ "testing_04/"
 
     ## Set up networks ##
 

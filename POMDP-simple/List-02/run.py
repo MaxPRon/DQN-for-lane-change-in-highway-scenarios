@@ -124,16 +124,16 @@ total_steps = 0
 
 done = False
 num_of_episodes = "final"
-r_seed = 0
+r_seed = 1
 
 #final_save_path = "./long/model_long_random/modelRL_0_"+str(num_of_episodes)+ ".ckpt"
 #final_save_path = "./models/stable_r0/random_0_Final.ckpt"
 #final_save_path = "./training/testing_13/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
-final_save_path = "./training/testing_02/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
+final_save_path = "./training/testing_04/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
 
 
 # Plotting/Testing Envionment
-max_timestep = 600
+max_timestep = 1000
 num_tries = 10
 num_of_finished = 0
 

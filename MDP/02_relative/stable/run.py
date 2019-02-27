@@ -123,19 +123,20 @@ reward_episode = 0
 total_steps = 0
 
 done = False
-num_of_episodes = "8400"
+num_of_episodes = "final"
 r_seed = 0
 
 #final_save_path = "./long/model_long_random/modelRL_0_"+str(num_of_episodes)+ ".ckpt"
 #final_save_path = "./models/stable_r0/random_0_Final.ckpt"
 #final_save_path = "./training/testing_13/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
-final_save_path = "./training/testing_n_02/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
+final_save_path = "./training/testing_n_03/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
 
 
 # Plotting/Testing Envionment
 max_timestep = 750
 num_tries = 10
 num_of_finished = 0
+buffer = 5
 
 x_ego_list = np.zeros((num_tries,max_timestep))
 y_ego_list = np.zeros((num_tries,max_timestep))
@@ -145,8 +146,7 @@ x_acc_list = np.zeros((num_tries,max_timestep))
 reward_list = np.zeros((num_tries,max_timestep))
 action_list = np.empty((num_tries,max_timestep))
 action_list_2 = []
-q_values_list = np.empty((num_tries,int(max_timestep/10)))
-
+q_values_list = np.empty((num_tries,int(max_timestep/buffer)))
 
 
 
@@ -170,11 +170,11 @@ for t in range(0,num_tries):
         total_reward = 0
         while done == False:
 
-            if timestep % 5 == 0:
+            if timestep % buffer == 0:
 
                 action = sess.run(mainQN.action_pred,feed_dict={mainQN.input_state:[state_v]})
                 q_values = sess.run(mainQN.output_q_predict,feed_dict={mainQN.input_state:[state_v]})
-                q_values_list[t, int(timestep/10)] = np.amax(q_values)
+                q_values_list[t, int(timestep/buffer)] = np.amax(q_values)
 
                 #action = random.randint(0, x_range * num_of_lanes-1)
                 #print("Action: ", action, "Timestep: ", timestep)

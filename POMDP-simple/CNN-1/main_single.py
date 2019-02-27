@@ -77,9 +77,9 @@ estep = 1500000
 
 #### Learning Parameters ####
 
-max_train_episodes = 20000
+max_train_episodes = 25000
 pre_train_steps = 50000
-random_sweep = 3
+random_sweep = 5
 tau = 1
 
 
@@ -124,7 +124,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_04/"
+    path_save = folder_path+ "testing_05/"
 
     ## Set up networks ##
 

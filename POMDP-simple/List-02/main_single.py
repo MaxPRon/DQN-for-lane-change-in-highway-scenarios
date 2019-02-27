@@ -67,13 +67,13 @@ update_freq = 20000
 gamma = 0.99
 eStart = 1
 eEnd = 0.1
-estep = 1500000
+estep = 1000000
 
 #### Learning Parameters ####
 
-max_train_episodes = 15000
+max_train_episodes = 25000
 pre_train_steps = 100000
-random_sweep = 3
+random_sweep = 5
 tau = 1
 
 
@@ -104,6 +104,7 @@ reward_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 finished_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 
 param_id = "test"
+buffer = 5
 
 for r_seed in range(0,random_sweep):
 
@@ -117,7 +118,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_03/"
+    path_save = folder_path+ "testing_05/"
 
     ## Set up networks ##
 
@@ -169,7 +170,7 @@ for r_seed in range(0,random_sweep):
             done = False
 
             while done == False:
-                if total_steps % 5 == 0:
+                if total_steps % buffer == 0:
                     if (np.random.random() < epsilon or total_steps < pre_train_steps):
                         action = random.randint(0,num_of_lanes*x_range-1)
                         #print("RANDOM)")
@@ -265,6 +266,7 @@ for r_seed in range(0,random_sweep):
                 file.write('SCENARIO PARAMETERS: \n\n')
                 file.write('Episodes: ' + str(max_train_episodes) + '\n')
                 file.write('Random sweeps: ' + str(random_sweep) + '\n')
+                file.write('Decision Buffer: ' + str(buffer) + '\n')
                 file.write('Cars: ' + str(num_of_cars) + '\n')
                 file.write('Lanes: ' + str(num_of_lanes) + '\n')
                 file.write('Ego speed init: ' + str(ego_speed_init) + '\n')

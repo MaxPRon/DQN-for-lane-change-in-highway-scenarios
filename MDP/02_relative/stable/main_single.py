@@ -76,13 +76,13 @@ update_freq = 20000
 gamma = 0.99
 eStart = 1
 eEnd = 0.1
-estep = 1500000
+estep = 150000
 
 #### Learning Parameters ####
 
-max_train_episodes = 25000
+max_train_episodes = 10000
 pre_train_steps = 100000
-random_sweep = 3
+random_sweep = 2
 tau = 1
 
 
@@ -99,7 +99,7 @@ goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
 
 #### Plot variables ####
-max_timestep = 750
+max_timestep = 350
 average_window = 100
 finished = 0
 x_ego_list = np.zeros((random_sweep,max_timestep))
@@ -111,7 +111,7 @@ reward_list = np.zeros((random_sweep,max_timestep))
 reward_sum_list = np.zeros((random_sweep,max_train_episodes))
 reward_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 finished_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
-
+buffer = 10
 param_id = "test"
 
 for r_seed in range(0,random_sweep):
@@ -126,7 +126,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_n_03/"
+    path_save = folder_path+ "results_03/"
 
     ## Set up networks ##
 
@@ -179,7 +179,7 @@ for r_seed in range(0,random_sweep):
             done = False
 
             while done == False:
-                if total_steps % 5 == 0:
+                if total_steps % buffer == 0:
                     if (np.random.random() < epsilon or total_steps < pre_train_steps):
                         action = random.randint(0,num_of_lanes*x_range-1)
                         #print("RANDOM)")
@@ -273,6 +273,7 @@ for r_seed in range(0,random_sweep):
                 file.write('Epsilon steps: ' + str(estep) + '\n\n')
 
                 file.write('SCENARIO PARAMETERS: \n\n')
+                file.write('Action buffer' + str(buffer) + '\n')
                 file.write('Cars: ' + str(num_of_cars) + '\n')
                 file.write('Lanes: ' + str(num_of_lanes) + '\n')
                 file.write('Ego speed init: ' + str(ego_speed_init) + '\n')
@@ -280,30 +281,9 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
                 file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: Fixed relative error\n\n\n\n')
+                file.write('REMARKS: Use of Reward 1, Buffer 10,short randomness \n\n\n\n')
 
-                file.write("self.reward = 0 \
-                            self.reward -= (self.y_acc ** 2) * 0.12 \
-                            self.reward -= self.x_acc ** 2  # x_acc \
-                            self.reward -= (self.speed_limit - self.vehicle_list[0].v) * 2 \
-                            self.lateral_dist = self.vehicle_list[0].y - 2\
-                            self.reward += (1.375 * self.lateral_dist ** 2 - 6.25 * self.lateral_dist + 5)\
-                            if self.vehicle_list[0].y in {2, 6, 10, 14, 18, 22}:\
-                            self.reward += 1\ "
-                           "### Velocity ###\
-                            non_ego_avg_v = 0\
-                            for n in range(0, self.n_cars): \
-                                non_ego_avg_v += self.vehicle_list[n + 1].v\
-                            non_ego_avg_v = non_ego_avg_v / self.n_cars\
-                            non_ego_delta_v = self.non_ego_limit - non_ego_avg_v\
-                            ### Add Global part ###\
-                            self.reward -= 0.1 * non_ego_delta_v ** 2\
-                            vehicle_list_sec = [vehicle for vehicle in self.vehicle_list if self.vehicle_list[0].x < vehicle.x]\
-                            if (len(vehicle_list_sec) == 0 and self.vehicle_list[0].y == (1 - 1) * self.road_width + self.road_width * 0.5):\
-                                self.reward += 1000\
-                            self.done = True\
-                            self.success = True\
-                            return self.reward")
+
 
                 file.close()
 

@@ -168,7 +168,7 @@ class World:
 
         self.timestep += 1
 
-        if self.timestep == 750:
+        if self.timestep == 350:
             self.done = True
 
         self.lane_prev = self.lane
@@ -291,33 +291,41 @@ class World:
     def reward_function(self):
         self.reward = 0
 
-        self.reward -= (self.y_acc ** 2) * 0.12
-        self.reward -= self.x_acc ** 2  # x_acc
-        self.reward -= (self.speed_limit - self.vehicle_list[0].v) * 2
-        self.lateral_dist = self.vehicle_list[0].y - 2
-        self.reward += (1.375 * self.lateral_dist ** 2 - 6.25 * self.lateral_dist + 5)
-        if self.vehicle_list[0].y in {2, 6, 10, 14, 18, 22}:
+        #self.reward -= (self.y_acc ** 2) * 0.12
+        #self.reward -= self.x_acc ** 2  # x_acc
+        self.reward -= (self.speed_limit - self.vehicle_list[0].v)
+        if self.vehicle_list[0].v == self.speed_limit:
+            self.reward+1
+        #self.lateral_dist = self.vehicle_list[0].y - 2
+        #self.reward += (1.375 * self.lateral_dist ** 2 - 6.25 * self.lateral_dist + 5)
+        if self.vehicle_list[0].y in {6, 10, 14, 18, 22}:
             self.reward += 1
+        if self.vehicle_list[0].y == 2:
+            self. reward+= 2
 
         #### Veloccity Delta ####
-        non_ego_avg_v = 0
-        for n in range(0, self.n_cars):
-            non_ego_avg_v += self.vehicle_list[n + 1].v
+        #non_ego_avg_v = 0
+        #for n in range(0, self.n_cars):
+        #    non_ego_avg_v += self.vehicle_list[n + 1].v
 
-        non_ego_avg_v = non_ego_avg_v / self.n_cars
+        #non_ego_avg_v = non_ego_avg_v / self.n_cars
 
-        non_ego_delta_v = self.non_ego_limit - non_ego_avg_v
+        #non_ego_delta_v = self.non_ego_limit - non_ego_avg_v
 
         ### Add Global part ###
-        self.reward -= 0.1 * non_ego_delta_v ** 2
+        #self.reward -= 0.1 * non_ego_delta_v ** 2
 
         vehicle_list_sec = [vehicle for vehicle in self.vehicle_list if self.vehicle_list[0].x < vehicle.x]
 
         if (len(vehicle_list_sec) == 0 and self.vehicle_list[0].y == (1 - 1) * self.road_width + self.road_width * 0.5):
             self.reward += 1000
-
+            print("Success at timestep:",self.timestep)
             self.done = True
             self.success = True
+        if self.vehicle_list[0].v < 1:
+            self.reward -= 1000
+            print("Fail at timestep:", self.timestep)
+            self.done = True
 
         # print("Reward: ",self.reward)
 
