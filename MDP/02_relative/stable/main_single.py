@@ -82,7 +82,7 @@ estep = 150000
 
 max_train_episodes = 10000
 pre_train_steps = 100000
-random_sweep = 2
+random_sweep = 3
 tau = 1
 
 
@@ -99,7 +99,7 @@ goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
 
 #### Plot variables ####
-max_timestep = 350
+max_timestep = 400
 average_window = 100
 finished = 0
 x_ego_list = np.zeros((random_sweep,max_timestep))
@@ -126,7 +126,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "results_03/"
+    path_save = folder_path+ "results_06/"
 
     ## Set up networks ##
 
@@ -281,7 +281,7 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
                 file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: Use of Reward 1, Buffer 10,short randomness \n\n\n\n')
+                file.write('REMARKS: Use of Reward 2, y-term,Buffer \n\n\n\n')
 
 
 

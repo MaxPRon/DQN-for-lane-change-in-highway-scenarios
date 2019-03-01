@@ -168,7 +168,7 @@ class World:
 
         self.timestep += 1
 
-        if self.timestep == 350:
+        if self.timestep == 400:
             self.done = True
 
         self.lane_prev = self.lane
@@ -291,7 +291,7 @@ class World:
     def reward_function(self):
         self.reward = 0
 
-        #self.reward -= (self.y_acc ** 2) * 0.12
+        self.reward -= self.y_acc * 0.1
         #self.reward -= self.x_acc ** 2  # x_acc
         self.reward -= (self.speed_limit - self.vehicle_list[0].v)
         if self.vehicle_list[0].v == self.speed_limit:

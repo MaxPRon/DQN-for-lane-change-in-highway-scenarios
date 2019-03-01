@@ -64,7 +64,7 @@ ego_speed_init = speed_limit
 input_dim = (num_of_cars+1)*3
 output_dim = x_range*num_of_lanes
 hidden_units = 50
-layers = 4
+layers = 3
 clip_value = 5000
 learning_rate = 0.001
 buffer_size = 50000
@@ -125,18 +125,19 @@ total_steps = 0
 
 done = False
 r_seed = 3
+buffer = 10
 
-for r_seed in range(0,3):
+for r_seed in range(0,2):
 
-    for x in range(0,25000,400):
+    for x in range(0,10000,400):
         num_of_episodes = x
 
-        final_save_path = "./training/testing_n_02/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
+        final_save_path = "./training/results_03/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
         #final_save_path = "./short_2/model_initial/random_0_Final.ckpt"
 
 
         # Plotting/Testing Envionment
-        max_timestep = 750
+        max_timestep = 350
         num_tries = 10
         num_of_finished = 0
 
@@ -173,7 +174,7 @@ for r_seed in range(0,3):
                 total_reward = 0
                 while done == False:
 
-                    if timestep % 10 == 0:
+                    if timestep % buffer == 0:
 
                         action = sess.run(mainQN.action_pred,feed_dict={mainQN.input_state:[state_v]})
                         q_values = sess.run(mainQN.output_q_predict,feed_dict={mainQN.input_state:[state_v]})
@@ -213,7 +214,7 @@ for r_seed in range(0,3):
 
 
 
-        image_save_path = './training/testing_n_02/Process/'
+        image_save_path = './training/results_03/Process/'
 
         #### Add position Distribution
         x_ego_list[x_ego_list==0] = np.nan

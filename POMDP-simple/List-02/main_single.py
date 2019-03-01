@@ -90,7 +90,7 @@ goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
 
 #### Plot variables ####
-max_timestep = 1000
+max_timestep = 400
 average_window = 100
 finished = 0
 x_ego_list = np.zeros((random_sweep,max_timestep))
@@ -104,7 +104,7 @@ reward_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 finished_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 
 param_id = "test"
-buffer = 5
+buffer = 10
 
 for r_seed in range(0,random_sweep):
 
@@ -118,7 +118,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_05/"
+    path_save = folder_path+ "results_08/"
 
     ## Set up networks ##
 
@@ -274,30 +274,9 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
                 file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: First test overtake, longer episode ,narrow, longer training \n\n\n\n')
+                file.write('REMARKS: Reward1,Full randomness \n\n\n\n')
 
-                file.write("self.reward = 0 \
-                            self.reward -= (self.y_acc ** 2) * 0.12 \
-                            self.reward -= self.x_acc ** 2  # x_acc \
-                            self.reward -= (self.speed_limit - self.vehicle_list[0].v) * 2 \
-                            self.lateral_dist = self.vehicle_list[0].y - 2\
-                            self.reward += (1.375 * self.lateral_dist ** 2 - 6.25 * self.lateral_dist + 5)\
-                            if self.vehicle_list[0].y in {2, 6, 10, 14, 18, 22}:\
-                            self.reward += 1\ "
-                           "### Velocity ###\
-                            non_ego_avg_v = 0\
-                            for n in range(0, self.n_cars): \
-                                non_ego_avg_v += self.vehicle_list[n + 1].v\
-                            non_ego_avg_v = non_ego_avg_v / self.n_cars\
-                            non_ego_delta_v = self.non_ego_limit - non_ego_avg_v\
-                            ### Add Global part ###\
-                            self.reward -= 0.1 * non_ego_delta_v ** 2\
-                            vehicle_list_sec = [vehicle for vehicle in self.vehicle_list if self.vehicle_list[0].x < vehicle.x]\
-                            if (len(vehicle_list_sec) == 0 and self.vehicle_list[0].y == (1 - 1) * self.road_width + self.road_width * 0.5):\
-                                self.reward += 1000\
-                            self.done = True\
-                            self.success = True\
-                            return self.reward")
+
 
                 file.close()
 

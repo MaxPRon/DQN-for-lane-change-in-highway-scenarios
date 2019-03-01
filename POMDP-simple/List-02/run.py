@@ -133,7 +133,7 @@ final_save_path = "./training/testing_04/modelRL_"+str(r_seed)+"_"+str(num_of_ep
 
 
 # Plotting/Testing Envionment
-max_timestep = 1000
+max_timestep = 400
 num_tries = 10
 num_of_finished = 0
 
