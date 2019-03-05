@@ -47,7 +47,7 @@ def relative_state(state):
 num_of_cars = 2
 num_of_lanes = 2
 track_length = 300
-speed_limit = 120
+speed_limit = 50
 random_seed = 0
 random.seed(random_seed)
 x_range = 10
@@ -99,7 +99,7 @@ goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
 
 #### Plot variables ####
-max_timestep = 400
+max_timestep = 600
 average_window = 100
 finished = 0
 x_ego_list = np.zeros((random_sweep,max_timestep))
@@ -127,7 +127,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "results_03/"
+    path_save = folder_path+ "results_04/"
 
     ## Set up networks ##
 
@@ -285,7 +285,7 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
                 file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: Reward 2, 5 degree Run \n\n\n\n')
+                file.write('REMARKS: Reward 2, 5 degree Run,SLOW \n\n\n\n')
 
 
                 file.close()

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9353c12-b073-411a-ac24-61e0151380fc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/main_single.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/environment/world_pomdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/main_single.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,11 +89,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stable/main_single.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="83" column="24" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="24" />
+            <state relative-caret-position="486">
+              <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -115,7 +116,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stable/reward_design.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1590">
+            <state relative-caret-position="-2111">
               <caret line="112" selection-start-line="112" selection-end-line="112" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -124,11 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stable/environment/world.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="321" column="12" selection-start-line="321" selection-start-column="12" selection-end-line="321" selection-end-column="55" />
+            <state relative-caret-position="245">
+              <caret line="310" column="52" lean-forward="true" selection-start-line="310" selection-start-column="52" selection-end-line="310" selection-end-column="52" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -454,16 +455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stable/reward_design.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stable/environment/lateral_agent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1009">
@@ -471,10 +462,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stable/main_single.py">
+    <entry file="file://$PROJECT_DIR$/stable/reward_design.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="83" column="24" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="24" />
+        <state relative-caret-position="-2111">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -483,8 +474,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stable/environment/world.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="321" column="12" selection-start-line="321" selection-start-column="12" selection-end-line="321" selection-end-column="55" />
+        <state relative-caret-position="245">
+          <caret line="310" column="52" lean-forward="true" selection-start-line="310" selection-start-column="52" selection-end-line="310" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stable/main_single.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

@@ -61,7 +61,7 @@ x_range = 10
 ego_lane_init = 1
 ego_pos_init = 0
 ego_speed_init = speed_limit
-x_view = 100
+x_view = 200
 y_view = 5
 
 #### Network parameters ####
@@ -74,7 +74,7 @@ layers = 3
 clip_value = 7500
 learning_rate = 0.001
 buffer_size = 100000
-batch_size = 64
+batch_size = 32
 update_freq = 20000
 kernel_size = [2,2]
 stride = [2,2]
@@ -84,13 +84,13 @@ stride = [2,2]
 gamma = 0.99
 eStart = 1
 eEnd = 0.1
-estep = 1500000
+estep = 150000
 
 #### Learning Parameters ####
 
-max_train_episodes = 10000
-pre_train_steps = 50000
-random_sweep = 3
+max_train_episodes = 12000
+pre_train_steps = 100000
+random_sweep = 2
 tau = 1
 
 
@@ -107,7 +107,7 @@ goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
 
 #### Plot variables ####
-max_timestep = 750
+max_timestep = 400
 average_window = 100
 finished = 0
 x_ego_list = np.zeros((random_sweep,max_timestep))
@@ -122,6 +122,8 @@ finished_average = np.zeros((random_sweep,int(max_train_episodes/average_window)
 
 param_id = "test"
 
+enable = 10
+
 for r_seed in range(0,random_sweep):
     start = time.time()
 
@@ -135,7 +137,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_04/"
+    path_save = folder_path+ "results_01/"
 
     ## Set up networks ##
 
@@ -182,7 +184,7 @@ for r_seed in range(0,random_sweep):
             done = False
 
             while done == False:
-                if total_steps % 5 == 0:
+                if total_steps % enable == 0:
                     if (np.random.random() < epsilon or total_steps < pre_train_steps):
                         action = random.randint(0,num_of_lanes*x_range-1)
                     else:
@@ -269,12 +271,15 @@ for r_seed in range(0,random_sweep):
                 file.write('Tau: ' + str(tau) + '\n\n')
 
                 file.write('RL PARAMETERS: \n\n')
+                file.write('Episodes: ' + str(max_train_episodes) + '\n')
+                file.write("Random seeds: " + str(random_sweep) + '\n')
                 file.write('Gamma: ' + str(gamma) + '\n')
                 file.write('Epsilon start: ' + str(eStart) + '\n')
                 file.write('Epsilon end: ' + str(eEnd) + '\n')
                 file.write('Epsilon steps: ' + str(estep) + '\n\n')
 
                 file.write('SCENARIO PARAMETERS: \n\n')
+                file.write('Action buffer' + str(enable) + '\n')
                 file.write('Cars: ' + str(num_of_cars) + '\n')
                 file.write('Lanes: ' + str(num_of_lanes) + '\n')
                 file.write('Ego speed init: ' + str(ego_speed_init) + '\n')
@@ -282,7 +287,7 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
                 file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: Global reward, medium view 100 m')
+                file.write('REMARKS: Reward 2, 200m view')
 
                 file.close()
 
