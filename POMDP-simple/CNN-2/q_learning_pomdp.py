@@ -13,9 +13,9 @@ class qnetwork:
     def __init__(self,input_dim,output_dim,hidden_units,layers,learning_rate,clip_value,kernel_size=[4,4],stride=[2,2]):
 
         # Input
-        self.input_scalar = tf.placeholder(shape=[None,17688],dtype=tf.float32,name="input_placeholder")
+        self.input_scalar = tf.placeholder(shape=[None,35288],dtype=tf.float32,name="input_placeholder")
         #self.input_state = tf.placeholder(tf.float32,input_dim,name = "input_placeholder")
-        self.input_state = tf.reshape(self.input_scalar,shape=[-1,201,11,8])
+        self.input_state = tf.reshape(self.input_scalar,shape=[-1,401,11,8])
         #self.ISWeights_ = tf.placeholder(tf.float32, [None, 1], name='IS_weights')
         # Network Architecture
         #self.hidden_layer = tf.layers.dense(self.input_state,hidden_units,activation=tf.nn.relu,kernel_initializer=tf.contrib.layers.xavier_initializer())

@@ -37,7 +37,7 @@ class World:
         self.non_ego_limit = self.speed_limit * 0.4
 
         #POMDP Params
-        self.x_view = 100
+        self.x_view = 200
         self.y_view = 5
         self.observation_grid = np.zeros((self.x_view*2+1,self.y_view*2+1,2))
 
@@ -272,6 +272,7 @@ class World:
 
     def dist_control_reversed(self,id):
 
+
         alpha =0.5
         lane = self.vehicle_list[id].y
         x_pos = self.vehicle_list[id].x
@@ -295,6 +296,17 @@ class World:
                 self.dist_to_front = dist
 
             acc = -alpha*(v_front[0] - v_ego) + 0.25*(alpha**2)*(dist-self.s0)
+
+
+        if acc <= 0:
+            acc = min(-self.vehicle_list[id].a,acc)
+        else:
+            acc = max(self.vehicle_list[id].b,acc)
+
+        if self.vehicle_list[id].v == self.speed_limit and acc > 0:
+            acc = 0
+        #acc += random.random()
+        return acc
 
     def reward_function(self):
         self.reward = 0

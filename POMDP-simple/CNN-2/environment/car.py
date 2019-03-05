@@ -84,24 +84,24 @@ class Car:
         # Implementation of kinematic bicycle model
         # Slip Angle
         u2 = np.deg2rad(u2)
-        self.beta = np.arctan(np.tan(u2)*np.divide(self.lr,self.lr + self.lf))
+        self.beta = np.arctan(np.tan(u2) * np.divide(self.lr, self.lr + self.lf))
 
         # Velocities
-        self.x_dot = self.v*np.cos(self.yaw+self.beta)
-        self.y_dot = self.v*np.sin(self.yaw+self.beta)
+        self.x_dot = self.v * np.cos(self.yaw + self.beta)
+        self.y_dot = self.v * np.sin(self.yaw + self.beta)
         self.acc = u1
-        self.yaw_dot = np.divide(self.v,self.lr)*np.sin(self.beta)
+        self.yaw_dot = np.divide(self.v, self.lr) * np.sin(self.beta)
 
         # Movement
-        self.x += self.x_dot*self.dt
-        self.y += self.y_dot*self.dt
-        self.yaw += self.yaw_dot*self.dt
+        self.x += self.x_dot * self.dt
+        self.y += self.y_dot * self.dt
+        self.yaw += self.yaw_dot * self.dt
         self.yaw_deg = np.degrees(self.yaw)
         self.yaw_dot_deg = np.degrees(self.yaw_dot)
         if self.v <= self.max_non_ego_v and u1 < 0:
             self.v = self.max_non_ego_v
         else:
-            self.v += self.acc*self.dt
+            self.v += self.acc * self.dt
 
         if self.v > 0:
             self.v = 0

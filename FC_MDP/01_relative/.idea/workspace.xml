@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f4612ba-85f2-4f6b-8132-da031bd4f2a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/main_single.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/environment/car.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/environment/world_pomdp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/q_learning_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/q_learning_pomdp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
