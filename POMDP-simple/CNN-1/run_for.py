@@ -74,7 +74,7 @@ layers = 3
 clip_value = 5000
 learning_rate = 0.001
 buffer_size = 50000
-batch_size = 32
+batch_size = 64
 update_freq = 10000
 kernel_size = [2,2]
 stride = [2,2]
@@ -136,15 +136,15 @@ num_of_episodes = "x_150"
 
 for r_seed in range(0,3):
 
-    for x in range(0,10000,400):
+    for x in range(0,5000,400):
         num_of_episodes = x
 
         #final_save_path = "./training/testing_init/modelRL_2_"+str(num_of_episodes)+ ".ckpt"
-        final_save_path = "./training/testing_init/modelRL_" + str(r_seed) + "_" + str(num_of_episodes) + ".ckpt"
+        final_save_path = "./training/testing_01/modelRL_" + str(r_seed) + "_" + str(num_of_episodes) + ".ckpt"
 
         #final_save_path = "./short_2/model_initial/random_0_Final.ckpt"
 
-        num_of_episodes = str(x) + "_0"
+        num_of_episodes = str(x)
         # Plotting/Testing Envionment
         max_timestep = 750
         num_tries = 10
@@ -224,7 +224,7 @@ for r_seed in range(0,3):
 
 
 
-        image_save_path = './training/testing_init/Process/'
+        image_save_path = './training/testing_01/Process/'
 
         #### Add position Distribution
         x_ego_list[x_ego_list==0] = np.nan

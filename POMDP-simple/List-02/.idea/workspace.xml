@@ -3,11 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="e9353c12-b073-411a-ac24-61e0151380fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/01_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/01_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/01_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/01_relative/stable/run_for.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/environment/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/run_for.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CNN-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CNN-1/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-1/environment/world_pomdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CNN-1/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-1/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CNN-1/q_learning_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-1/q_learning_pomdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CNN-1/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-1/run_for.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CNN-2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CNN-2/environment/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-2/environment/car.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CNN-2/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-2/environment/world_pomdp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CNN-2/q_learning_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-2/q_learning_pomdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../List-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../List-01/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_for.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,34 +102,34 @@
     <session id="-1164381474">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
-          <entry key="project.open.time.0" value="9" />
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.0" value="10" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="427" />
+          <entry key="py" value="514" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="427" />
+          <entry key="Python" value="514" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="4" />
+          <entry key="py" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="4" />
+          <entry key="Python" value="6" />
         </counts>
       </usages-collector>
     </session>
@@ -127,8 +139,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_single.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="786">
-              <caret line="186" column="10" selection-start-line="186" selection-start-column="10" selection-end-line="186" selection-end-column="10" />
+            <state relative-caret-position="228">
+              <caret line="109" selection-start-line="109" selection-end-line="109" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -139,7 +151,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1935">
+            <state relative-caret-position="630">
               <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -151,8 +163,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_for.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2910">
-              <caret line="200" selection-start-line="200" selection-end-line="200" />
+            <state relative-caret-position="355">
+              <caret line="199" column="48" selection-start-line="199" selection-start-column="48" selection-end-line="199" selection-end-column="48" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -163,8 +175,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environment/world.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4515">
-              <caret line="308" column="9" selection-start-line="308" selection-start-column="9" selection-end-line="308" selection-end-column="9" />
+            <state relative-caret-position="-1819">
+              <caret line="180" column="31" selection-start-line="180" selection-start-column="31" selection-end-line="180" selection-end-column="31" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -194,6 +206,11 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>buffer</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -206,9 +223,9 @@
         <option value="$PROJECT_DIR$/stable/run_for.py" />
         <option value="$PROJECT_DIR$/stable/main_single.py" />
         <option value="$PROJECT_DIR$/environment/car.py" />
-        <option value="$PROJECT_DIR$/run_for.py" />
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/environment/world.py" />
+        <option value="$PROJECT_DIR$/run_for.py" />
         <option value="$PROJECT_DIR$/main_single.py" />
       </list>
     </option>
@@ -225,6 +242,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,11 +259,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MDP/02_relative" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -376,8 +393,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main_single (1)" />
-        <item itemvalue="Python.run (1)" />
         <item itemvalue="Python.run_for (1)" />
+        <item itemvalue="Python.run (1)" />
         <item itemvalue="Python.main_single" />
         <item itemvalue="Python.run_for" />
       </list>
@@ -407,9 +424,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15829694" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -421,27 +437,27 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.31903765" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3294979" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32845187" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.3294979" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3294979" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32845187" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32985386" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39979124" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33891213" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39979124" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32985386" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32985386" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.31903765" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3294979" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32845187" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.3294979" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32845187" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -482,46 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_single.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="186" column="10" selection-start-line="186" selection-start-column="10" selection-end-line="186" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1935">
-          <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run_for.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2910">
-          <caret line="200" selection-start-line="200" selection-end-line="200" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environment/world.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4515">
-          <caret line="308" column="9" selection-start-line="308" selection-start-column="9" selection-end-line="308" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/q_learning.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -535,6 +511,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1590">
           <caret line="106" column="22" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_for.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="199" column="48" selection-start-line="199" selection-start-column="48" selection-end-line="199" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/world.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1819">
+          <caret line="180" column="31" selection-start-line="180" selection-start-column="31" selection-end-line="180" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_single.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

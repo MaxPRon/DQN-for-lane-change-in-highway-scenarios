@@ -38,7 +38,7 @@ class World:
 
         #POMDP Params
         self.x_view = 150
-        self.y_view = 10
+        self.y_view = 5
         self.observation_grid = np.zeros((self.x_view*2+1,self.y_view*2+1,2))
 
         ### RL Params
@@ -285,6 +285,7 @@ class World:
             self.reward += 1000
             self.done = True
             self.success = True
+            print("Success at timestep: ",self.timestep)
 
 
         #print("Reward: ",self.reward)

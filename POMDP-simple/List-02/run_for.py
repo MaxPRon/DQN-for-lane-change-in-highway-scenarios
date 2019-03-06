@@ -116,19 +116,19 @@ total_steps = 0
 
 done = False
 r_seed = 3
-buffer = 5
+buffer = 10
 
-for r_seed in range(0,5):
+for r_seed in range(0,3):
 
-    for x in range(0,25000,400):
+    for x in range(0,10000,400):
         num_of_episodes = x
 
-        final_save_path = "./training/testing_04/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
+        final_save_path = "./training/results_06/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
         #final_save_path = "./short_2/model_initial/random_0_Final.ckpt"
 
 
         # Plotting/Testing Envionment
-        max_timestep = 1000
+        max_timestep = 400
         num_tries = 10
         num_of_finished = 0
 
@@ -140,7 +140,7 @@ for r_seed in range(0,5):
         reward_list = np.zeros((num_tries,max_timestep))
         action_list = np.empty((num_tries,max_timestep))
         action_list_2 = []
-        q_values_list = np.empty((num_tries,int(max_timestep/buffer)))
+        q_values_list = np.empty((num_tries,int(max_timestep/buffer)+1))
 
 
 
@@ -203,7 +203,7 @@ for r_seed in range(0,5):
 
 
 
-        image_save_path = './training/testing_04/Process/'
+        image_save_path = './training/results_06/Process/'
 
         #### Add position Distribution
         x_ego_list[x_ego_list==0] = np.nan

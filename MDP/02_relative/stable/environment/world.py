@@ -171,6 +171,8 @@ class World:
         if self.timestep == 400:
             self.done = True
 
+
+
         self.lane_prev = self.lane
 
         vehicle_list_c = copy.deepcopy(self.vehicle_list)

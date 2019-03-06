@@ -222,7 +222,7 @@ class World:
 
     def reward_function(self):
         self.reward = 0
-        epsilon = 0.15
+        epsilon = 0.5
 
         self.reward -= self.y_acc * 0.1
         # self.reward -= self.x_acc ** 2  # x_acc

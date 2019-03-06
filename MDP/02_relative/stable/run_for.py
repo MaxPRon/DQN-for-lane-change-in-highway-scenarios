@@ -112,7 +112,7 @@ trainables = tf. trainable_variables()
 
 targetOps = q_learning.updateNetwork(trainables,tau)
 
-random_sweep= 3
+random_sweep= 5
 
 ## Init environment ##
 
@@ -127,17 +127,17 @@ done = False
 r_seed = 3
 buffer = 10
 
-for r_seed in range(0,2):
+for r_seed in range(0,3):
 
-    for x in range(0,10000,400):
+    for x in range(0,20000,400):
         num_of_episodes = x
 
-        final_save_path = "./training/results_03/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
+        final_save_path = "./training/results_08/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
         #final_save_path = "./short_2/model_initial/random_0_Final.ckpt"
 
 
         # Plotting/Testing Envionment
-        max_timestep = 350
+        max_timestep = 400
         num_tries = 10
         num_of_finished = 0
 
@@ -178,7 +178,7 @@ for r_seed in range(0,2):
 
                         action = sess.run(mainQN.action_pred,feed_dict={mainQN.input_state:[state_v]})
                         q_values = sess.run(mainQN.output_q_predict,feed_dict={mainQN.input_state:[state_v]})
-                        q_values_list[t, int(timestep/10)] = np.amax(q_values)
+                        q_values_list[t, int(timestep/buffer)] = np.amax(q_values)
 
                         #action = random.randint(0, x_range * num_of_lanes-1)
                         #print("Action: ", action, "Timestep: ", timestep)
@@ -214,7 +214,7 @@ for r_seed in range(0,2):
 
 
 
-        image_save_path = './training/results_03/Process/'
+        image_save_path = './training/results_08/Process/'
 
         #### Add position Distribution
         x_ego_list[x_ego_list==0] = np.nan

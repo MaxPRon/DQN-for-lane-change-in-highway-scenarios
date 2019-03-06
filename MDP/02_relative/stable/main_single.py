@@ -111,7 +111,7 @@ reward_list = np.zeros((random_sweep,max_timestep))
 reward_sum_list = np.zeros((random_sweep,max_train_episodes))
 reward_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 finished_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
-enable= 10
+enable= 6
 param_id = "test"
 
 for r_seed in range(0,random_sweep):
@@ -126,7 +126,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "results_08/"
+    path_save = folder_path+ "results_07/"
 
     ## Set up networks ##
 
@@ -276,6 +276,7 @@ for r_seed in range(0,random_sweep):
 
                 file.write('SCENARIO PARAMETERS: \n\n')
                 file.write('Action buffer' + str(enable) + '\n')
+                file.write('Max_length' + str(max_timestep) + '\n')
                 file.write('Cars: ' + str(num_of_cars) + '\n')
                 file.write('Lanes: ' + str(num_of_lanes) + '\n')
                 file.write('Ego speed init: ' + str(ego_speed_init) + '\n')
@@ -283,7 +284,7 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
                 file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: Use of Reward 2, y-term,Buffer, Longterm \n\n\n\n')
+                file.write('REMARKS: Use of Reward 2, y-term \n\n\n\n')
 
 
 

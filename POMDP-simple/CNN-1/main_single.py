@@ -51,15 +51,15 @@ ego_lane_init = 1
 ego_pos_init = 0
 ego_speed_init = speed_limit
 x_view = 150
-y_view = 10
+y_view = 5
 
 #### Network parameters ####
 
 input_dim = [x_view*2+1,y_view*2+1]
 input_dim_v = (x_view*2+1)*(y_view*2+1)*8
 output_dim = (x_range*num_of_lanes)
-hidden_units = 100
-layers = 4
+hidden_units = 50
+layers = 3
 clip_value = 7500
 learning_rate = 0.001
 buffer_size = 100000
@@ -77,9 +77,9 @@ estep = 1500000
 
 #### Learning Parameters ####
 
-max_train_episodes = 25000
-pre_train_steps = 50000
-random_sweep = 5
+max_train_episodes = 12000
+pre_train_steps = 100000
+random_sweep = 2
 tau = 1
 
 
@@ -96,7 +96,7 @@ goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
 
 #### Plot variables ####
-max_timestep = 750
+max_timestep = 700
 average_window = 100
 finished = 0
 x_ego_list = np.zeros((random_sweep,max_timestep))
@@ -110,6 +110,7 @@ reward_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 finished_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 
 param_id = "test"
+enable = 10
 
 for r_seed in range(0,random_sweep):
     start = time.time()
@@ -124,7 +125,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_05/"
+    path_save = folder_path+ "results_01/"
 
     ## Set up networks ##
 
@@ -171,7 +172,7 @@ for r_seed in range(0,random_sweep):
             done = False
 
             while done == False:
-                if total_steps % 5 == 0:
+                if total_steps % enable == 0:
                     if (np.random.random() < epsilon or total_steps < pre_train_steps):
                         action = random.randint(0,num_of_lanes*x_range-1)
                     else:
@@ -255,6 +256,8 @@ for r_seed in range(0,random_sweep):
                 file.write('Pre_train_steps: ' + str(pre_train_steps) + '\n')
                 file.write('Batch_size: ' + str(batch_size) + '\n')
                 file.write('Update frequency: ' + str(update_freq) + '\n')
+                file.write('Stride: ' + str(stride) + '\n')
+                file.write('Kernel: ' + str(kernel_size) + '\n')
                 file.write('Tau: ' + str(tau) + '\n\n')
 
                 file.write('RL PARAMETERS: \n\n')
@@ -266,6 +269,9 @@ for r_seed in range(0,random_sweep):
                 file.write('SCENARIO PARAMETERS: \n\n')
                 file.write('Episodes: ' + str(max_train_episodes) + '\n')
                 file.write('Random sweeps: ' + str(random_sweep) + '\n')
+                file.write('Buffer: ' + str(enable) + '\n')
+                file.write('Input dim: ' + str(input_dim) + '\n')
+                file.write('Input dim vector: ' + str(input_dim_v) + '\n')
                 file.write('Cars: ' + str(num_of_cars) + '\n')
                 file.write('Lanes: ' + str(num_of_lanes) + '\n')
                 file.write('Ego speed init: ' + str(ego_speed_init) + '\n')

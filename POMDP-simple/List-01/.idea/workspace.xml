@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9353c12-b073-411a-ac24-61e0151380fc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../FC_MDP/02_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/02_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/environment/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/run_for.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CNN-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CNN-1/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-1/environment/world_pomdp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CNN-1/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-1/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CNN-2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_single.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../List-02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../List-02/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../List-02/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../List-02/main_single.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,11 +67,12 @@
     <session id="-967867970">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="4" />
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.0" value="5" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -98,8 +103,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_single.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="264" column="16" lean-forward="true" selection-start-line="264" selection-start-column="16" selection-end-line="265" selection-end-column="72" />
+            <state relative-caret-position="148">
+              <caret line="69" column="15" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -353,7 +358,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="32" width="1853" height="1048" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13169399" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -423,8 +427,8 @@
     <entry file="file://$PROJECT_DIR$/stable/reward_design.py" />
     <entry file="file://$PROJECT_DIR$/main_single.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="264" column="16" lean-forward="true" selection-start-line="264" selection-start-column="16" selection-end-line="265" selection-end-column="72" />
+        <state relative-caret-position="148">
+          <caret line="69" column="15" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
