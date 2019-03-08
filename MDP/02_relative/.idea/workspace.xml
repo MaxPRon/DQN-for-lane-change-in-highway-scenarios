@@ -3,24 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="e9353c12-b073-411a-ac24-61e0151380fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01_relative/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../01_relative/stable/run_for.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/environment/world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/main_single.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/run_for.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-1/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-1/environment/world_pomdp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-1/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-1/main_single.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-1/q_learning_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-1/q_learning_pomdp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-1/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-1/run_for.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/CNN-2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/environment/world.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/main_single.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/run_for.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,12 +71,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="40" />
-          <entry key="py" value="1197" />
+          <entry key="py" value="1213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1237" />
+          <entry key="Python" value="1253" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -123,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stable/run_for.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="955">
-              <caret line="180" column="60" selection-start-line="180" selection-start-column="60" selection-end-line="180" selection-end-column="60" />
+            <state relative-caret-position="235">
+              <caret line="216" column="48" selection-start-line="216" selection-start-column="48" selection-end-line="216" selection-end-column="48" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -147,11 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stable/environment/world.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-105">
-              <caret line="338" selection-start-line="338" selection-end-line="338" />
+            <state relative-caret-position="496">
+              <caret line="333" column="26" lean-forward="true" selection-start-line="295" selection-start-column="8" selection-end-line="333" selection-end-column="26" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -231,7 +222,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../POMDP-simple/List-02" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../POMDP-simple/CNN-1" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -384,6 +375,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24945416" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -473,26 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stable/reward_design.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-734">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stable/environment/world.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="338" selection-start-line="338" selection-end-line="338" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stable/main_single.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1780">
@@ -505,8 +477,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stable/run_for.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="955">
-          <caret line="180" column="60" selection-start-line="180" selection-start-column="60" selection-end-line="180" selection-end-column="60" />
+        <state relative-caret-position="235">
+          <caret line="216" column="48" selection-start-line="216" selection-start-column="48" selection-end-line="216" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stable/reward_design.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-734">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stable/environment/world.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="333" column="26" lean-forward="true" selection-start-line="295" selection-start-column="8" selection-end-line="333" selection-end-column="26" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

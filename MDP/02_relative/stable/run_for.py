@@ -149,7 +149,7 @@ for r_seed in range(0,3):
         reward_list = np.zeros((num_tries,max_timestep))
         action_list = np.empty((num_tries,max_timestep))
         action_list_2 = []
-        q_values_list = np.empty((num_tries,int(max_timestep/10)))
+        q_values_list = np.empty((num_tries,int(max_timestep/buffer)+1))
 
 
 

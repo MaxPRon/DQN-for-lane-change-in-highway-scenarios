@@ -51,7 +51,7 @@ ego_lane_init = 1
 ego_pos_init = 0
 ego_speed_init = speed_limit
 x_view = 150
-y_view = 5
+y_view = 10
 
 #### Network parameters ####
 

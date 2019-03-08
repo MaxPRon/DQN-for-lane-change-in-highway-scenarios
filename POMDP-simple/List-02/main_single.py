@@ -71,9 +71,9 @@ estep = 1000000
 
 #### Learning Parameters ####
 
-max_train_episodes = 25000
+max_train_episodes = 12000
 pre_train_steps = 100000
-random_sweep = 5
+random_sweep = 3
 tau = 1
 
 
@@ -118,7 +118,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "results_08/"
+    path_save = folder_path+ "results_11/"
 
     ## Set up networks ##
 
@@ -275,7 +275,7 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
                 file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: Reward 1\n\n\n\n')
+                file.write('REMARKS: Reward 2\n\n\n\n')
 
 
                 file.close()
