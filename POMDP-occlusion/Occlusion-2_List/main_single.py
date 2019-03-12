@@ -8,11 +8,9 @@ import seaborn as sns
 #### Import own modules ####
 import sys
 sys.path.insert(0,'environment/')
-import q_learning
-import world
+import q_learning_pomdp
+import world_pomdp
 import lateral_agent
-
-
 
 def vectorize_state(state):
     v_x = []
@@ -29,6 +27,9 @@ def vectorize_state(state):
     state_v = np.concatenate((state_v, v_v))
     return state_v
 
+
+def processState(states):
+    return np.reshape(states,[input_dim_v])
 
 
 
@@ -49,31 +50,46 @@ x_range = 10
 ego_lane_init = 1
 ego_pos_init = 0
 ego_speed_init = speed_limit
+x_view = 150
+y_view = 5
+
+
 
 #### Network parameters ####
+resolution = 10
+x_dim = (x_view * 2 + 1) * resolution
+y_dim = (y_view * 2 + 1) * resolution
 
-input_dim = (num_of_cars+1)*3
+
+#input_dim = [x_view*2+1,((y_view*2)+1)]
+#input_dim_v = (x_view*2+1)*((y_view*2)+1)*8
+input_dim = [x_dim,y_dim]
+input_dim_v = x_dim*y_dim
+
+
 output_dim = (x_range*num_of_lanes)
 hidden_units = 50
 layers = 3
 clip_value = 7500
 learning_rate = 0.001
 buffer_size = 100000
-batch_size = 32
+batch_size = 64
 update_freq = 20000
+kernel_size = [2,2]
+stride = [2,2]
 
 #### RL Parameters ####
 
 gamma = 0.99
 eStart = 1
 eEnd = 0.1
-estep = 150000
+estep = 1500000
 
 #### Learning Parameters ####
 
-max_train_episodes = 25000
-pre_train_steps = 100000
-random_sweep = 5
+max_train_episodes = 5000
+pre_train_steps = 50000
+random_sweep = 3
 tau = 1
 
 
@@ -84,13 +100,13 @@ dt = 0.1
 timestep = 0
 
 lateral_controller = lateral_agent.lateral_control(dt)
-env = world.World(num_of_cars,num_of_lanes,track_length,speed_limit,ego_pos_init,ego_lane_init,ego_speed_init,dt,random_seed,x_range)
+env = world_pomdp.World(num_of_cars,num_of_lanes,track_length,speed_limit,ego_pos_init,ego_lane_init,ego_speed_init,dt,random_seed,x_range)
 goal_lane = (ego_lane_init - 1) * env.road_width + env.road_width * 0.5
 goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
 
 #### Plot variables ####
-max_timestep = 450
+max_timestep = 750
 average_window = 100
 finished = 0
 x_ego_list = np.zeros((random_sweep,max_timestep))
@@ -104,9 +120,9 @@ reward_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 finished_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 
 param_id = "test"
-enable = 8
 
 for r_seed in range(0,random_sweep):
+    start = time.time()
 
     random.seed(r_seed)
 
@@ -118,14 +134,14 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "results_07/"
+    path_save = folder_path+ "testing_01/"
 
     ## Set up networks ##
 
     tf.reset_default_graph()
 
-    mainQN = q_learning.qnetwork(input_dim, output_dim, hidden_units, layers, learning_rate, clip_value)
-    targetQN = q_learning.qnetwork(input_dim, output_dim, hidden_units, layers, learning_rate, clip_value)
+    mainQN = q_learning_pomdp.qnetwork(input_dim_v, output_dim, hidden_units, layers, learning_rate, clip_value,kernel_size,stride)
+    targetQN = q_learning_pomdp.qnetwork(input_dim_v, output_dim, hidden_units, layers, learning_rate, clip_value,kernel_size,stride)
 
     init = tf.global_variables_initializer()
 
@@ -133,11 +149,11 @@ for r_seed in range(0,random_sweep):
 
     trainables = tf.trainable_variables()
 
-    targetOps = q_learning.updateNetwork(trainables, tau)
+    targetOps = q_learning_pomdp.updateNetwork(trainables, tau)
 
     load_model = False
     ## Create replay buffer ##
-    exp_buffer = q_learning.replay_buffer(buffer_size)
+    exp_buffer = q_learning_pomdp.replay_buffer(buffer_size)
 
     ## Randomness of actions ##
     epsilon = eStart
@@ -151,18 +167,15 @@ for r_seed in range(0,random_sweep):
         sess.run(init)
         start = time.time()
         for episode in range(max_train_episodes):
-            episode_buffer = q_learning.replay_buffer(buffer_size)
-
-            #if episode % 200 == 0:
-            #    ego_pos_init = 100 * random.random()
-            #    ego_lane_init = random.randint(1, 2)
-
-            env = world.World(num_of_cars, num_of_lanes, track_length, speed_limit, ego_pos_init, ego_lane_init,
+            print("Episode: ",episode," Timestep: ",total_steps)
+            episode_buffer = q_learning_pomdp.replay_buffer(buffer_size)
+            env = world_pomdp.World(num_of_cars, num_of_lanes, track_length, speed_limit, ego_pos_init, ego_lane_init,
                               ego_speed_init,
                               dt, r_seed, x_range)
-            state,_,_ = env.get_state()
-            state_v = vectorize_state(state)
 
+            observation = env.field_of_view()
+            observation = env.grid
+            observation_v = processState(observation)
 
             reward_sum = 0
             timestep = 0
@@ -170,22 +183,25 @@ for r_seed in range(0,random_sweep):
             done = False
 
             while done == False:
-                if total_steps % enable == 0:
+                print("Episode: ", episode, " Timestep: ", total_steps)
+
+                if total_steps % 5 == 0:
                     if (np.random.random() < epsilon or total_steps < pre_train_steps):
                         action = random.randint(0,num_of_lanes*x_range-1)
-                        #print("RANDOM)")
                     else:
-                        action = sess.run(mainQN.action_pred,feed_dict={mainQN.input_state:[state_v]})
-                        action = action[0]
-                        #print("Network")
+                        action = sess.run(mainQN.action_pred,feed_dict={mainQN.input_scalar:[observation_v]})
 
                 state1, reward,done = env.step(action)
-                state1_v = vectorize_state(state1)
+                observation_1 = env.field_of_view()
+                observation_1 = env.grid
+                observation_1_v = processState(observation_1)
+
+
 
                 total_steps += 1
 
-                episode_buffer.add(np.reshape(np.array([state_v,action,reward,state1_v,done]),[1,5]))
-
+                #episode_buffer.add(np.reshape(np.array([state_v,action,reward,state1_v,done]),[1,5]))
+                episode_buffer.add(np.reshape(np.array([observation_v, action, reward, observation_1_v, done]), [1, 5]))
                 if total_steps > pre_train_steps:
                     if epsilon > eEnd:
                         epsilon-=stepDrop
@@ -193,8 +209,8 @@ for r_seed in range(0,random_sweep):
                     trainBatch = exp_buffer.sample(batch_size)
                     ## Calculate Q-Value: Q = r(s,a) + gamma*Q(s1,a_max)
                     # Use of the main network to predict the action a_max
-                    action_max = sess.run(mainQN.action_pred,feed_dict={mainQN.input_state:np.vstack(trainBatch[:,3])})
-                    Qt1_vec = sess.run(targetQN.output_q_predict,feed_dict={targetQN.input_state: np.vstack(trainBatch[:,3])}) #Q-values for s1
+                    action_max = sess.run(mainQN.action_pred,feed_dict={mainQN.input_scalar:np.vstack(trainBatch[:,3])})
+                    Qt1_vec = sess.run(targetQN.output_q_predict,feed_dict={targetQN.input_scalar: np.vstack(trainBatch[:,3])}) #Q-values for s1
 
                     end_multiplier = -(trainBatch[:,4]-1)
                     Qt1 = Qt1_vec[range(batch_size),action_max] # select Q(s1,a_max)
@@ -203,16 +219,16 @@ for r_seed in range(0,random_sweep):
                     Q_gt = trainBatch[:,2] + gamma*Qt1*end_multiplier
 
                     #Optimize network
-                    _ = sess.run(mainQN.update,feed_dict={mainQN.input_state:np.vstack(trainBatch[:,0]),mainQN.q_gt:Q_gt,mainQN.actions:trainBatch[:,1]})
+                    _ = sess.run(mainQN.update,feed_dict={mainQN.input_scalar:np.vstack(trainBatch[:,0]),mainQN.q_gt:Q_gt,mainQN.actions:trainBatch[:,1]})
 
                     ## Update target network ##
                     if total_steps % update_freq == 0:
                         print("Update target network!")
-                        q_learning.updateTarget(targetOps,sess)
+                        q_learning_pomdp.updateTarget(targetOps,sess)
 
                 reward_sum+=reward
 
-                state_v = state1_v
+                observation_v = observation_1_v
                 #env.render()
             exp_buffer.add(episode_buffer.buffer)
             reward_sum_list[r_seed, episode] = reward_sum
@@ -226,23 +242,22 @@ for r_seed in range(0,random_sweep):
                 print("Model saved in: ",save_path)
             if episode % average_window == 0:
                 if episode > 1:
-                    print("Total steps: ", total_steps," Episode: ",episode, " Average reward over "+str(average_window)+" Episodes: ",
-                          np.mean(reward_sum_list[r_seed,episode-average_window:episode]),"Finished: ",finished,"/"+str(average_window)+""," Episode:", episode, " Epsilon: ",epsilon)
-                    reward_average[r_seed, int(episode / average_window)] = np.mean(reward_sum_list[r_seed,episode-average_window:episode])
-                    finished_average[r_seed, int(episode / average_window)] = finished
+                    print("Total steps: ", total_steps, " Episode: ", episode,
+                          " Average reward over " + str(average_window) + " Episodes: ",
+                          np.mean(reward_sum_list[r_seed, episode - average_window:episode]), "Finished: ", finished,
+                          "/" + str(average_window) + "", " Episode:", episode, " Epsilon: ", epsilon)
                     #### Write to file ####
                     file = open(path_save + 'training_process' + str(r_seed) + '.txt', 'a')
-                    file.write("Total steps: " + str(total_steps) + " Episode: " + str(
-                        episode) + " Average reward over " + str(average_window) + " Episodes: " +
-                               str(np.mean(
-                                   reward_sum_list[r_seed, episode - average_window:episode])) + "Finished: " + str(
-                        finished) + "/" + str(average_window) + "\n")
+                    file.write("Total steps: "+str(total_steps)+" Episode: "+ str(episode)+" Average reward over "+str(average_window)+" Episodes: "+
+                          str(np.mean(reward_sum_list[r_seed,episode-average_window:episode]))+"Finished: "+str(finished)+"/"+str(average_window)+" Epsilon: "+str(epsilon)+"\n")
 
                     file.close()
                     #### Close File ####
 
-
+                    reward_average[r_seed, int(episode / average_window)] = np.mean(reward_sum_list[r_seed,episode-average_window:episode])
+                    finished_average[r_seed, int(episode / average_window)] = finished
                     finished = 0
+
             if r_seed == 0 and episode == 1:  # Only write for first time
 
                 file = open(path_save + 'params_' + str(param_id) + '.txt', 'w')
@@ -258,16 +273,12 @@ for r_seed in range(0,random_sweep):
                 file.write('Tau: ' + str(tau) + '\n\n')
 
                 file.write('RL PARAMETERS: \n\n')
-                file.write('Episodes: ' + str(max_train_episodes) + '\n')
-                file.write("Random seeds: " + str(random_sweep) + '\n')
                 file.write('Gamma: ' + str(gamma) + '\n')
                 file.write('Epsilon start: ' + str(eStart) + '\n')
                 file.write('Epsilon end: ' + str(eEnd) + '\n')
                 file.write('Epsilon steps: ' + str(estep) + '\n\n')
 
                 file.write('SCENARIO PARAMETERS: \n\n')
-                file.write('Action buffer' + str(enable) + '\n')
-                file.write('Max_length' + str(max_timestep) + '\n')
                 file.write('Cars: ' + str(num_of_cars) + '\n')
                 file.write('Lanes: ' + str(num_of_lanes) + '\n')
                 file.write('Ego speed init: ' + str(ego_speed_init) + '\n')
@@ -275,13 +286,18 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
                 file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: Reward 1\n\n\n\n')
-
+                file.write('REMARKS: Global reward, medium view 150 m, Shorter')
 
                 file.close()
 
-        final_save_path = saver.save(sess,path_save+"modelRL_"+str(r_seed)+"_"  + "final.ckpt")
+
+        final_save_path = saver.save(sess,path_save+"random_"+str(r_seed)+"_"  + "Final.ckpt")
         print("Model saved in: %s",final_save_path)
+
+        end = time.time()
+        print("Elapsed time for one cycle: ", end-start)
+        file = open(path_save + 'training_process' + str(r_seed) + '.txt', 'a')
+        file.write("Elapsed Time for one random seed:" + str(end-start)+"\n")
 
 
 
@@ -289,7 +305,7 @@ for r_seed in range(0,random_sweep):
 plt.figure(4)
 ax = plt.subplot(1,1,1)
 ax.set_title("Reward over time")
-ax.set_xlabel("episode/100")
+ax.set_xlabel("epsisode/100")
 ax.set_ylabel("reward")
 ax.grid()
 sns.tsplot(reward_average)
@@ -303,7 +319,7 @@ plt.close()
 plt.figure(5)
 ax = plt.subplot(1, 1, 1)
 ax.set_title("Success time")
-ax.set_xlabel("episode/100")
+ax.set_xlabel("epsiode/100")
 ax.set_ylabel("Finished Episodes/100")
 ax.grid()
 sns.tsplot(finished_average)

@@ -80,7 +80,7 @@ estep = 150000
 
 #### Learning Parameters ####
 
-max_train_episodes = 150000
+max_train_episodes = 50000
 pre_train_steps = 100000
 random_sweep = 3
 tau = 1
@@ -112,6 +112,10 @@ reward_sum_list = np.zeros((random_sweep,max_train_episodes))
 reward_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 finished_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 
+duration_list = np.zeros((random_sweep,max_timestep))
+duration_sum_list = np.zeros((random_sweep,max_train_episodes))
+duration_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
+
 param_id = "test"
 enable = 10
 
@@ -127,7 +131,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "results_04/"
+    path_save = folder_path+ "results_blabla/"
 
     ## Set up networks ##
 
@@ -155,6 +159,7 @@ for r_seed in range(0,random_sweep):
     ## Further Variables
     done =False
     total_steps = 0
+    duration_sum = 0
 
     with tf.Session() as sess:
         sess.run(init)
@@ -175,6 +180,7 @@ for r_seed in range(0,random_sweep):
 
 
             reward_sum = 0
+
             timestep = 0
             action = 0
             done = False
@@ -223,24 +229,31 @@ for r_seed in range(0,random_sweep):
 
                 reward_sum+=reward
 
+
+                ### Step Environment
                 state_v = state1_v
+                ####################
+
                 #env.render()
             exp_buffer.add(episode_buffer.buffer)
             reward_sum_list[r_seed, episode] = reward_sum
             end = time.time()
+            duration_sum += env.timestep
             #print("Time for one episode: ",end-start," Episode: ",episode)
             if env.success == True:
                 finished += 1
 
-            if episode % 10000 == 0:
+            if episode % 5000 == 0:
                 save_path = saver.save(sess,path_save+"modelRL_"+str(r_seed)+"_"+str(episode)+".ckpt")
                 print("Model saved in: ",save_path)
             if episode % average_window == 0:
                 if episode > 1:
                     print("Total steps: ", total_steps," Episode: ",episode, " Average reward over "+str(average_window)+" Episodes: ",
                           np.mean(reward_sum_list[r_seed,episode-average_window:episode]),"Finished: ",finished,"/"+str(average_window)+""," Episode:", episode, " Epsilon: ",epsilon)
+                    print("Average duration of one episode: ", duration_sum/average_window, " timesteps")
                     reward_average[r_seed, int(episode / average_window)] = np.mean(reward_sum_list[r_seed,episode-average_window:episode])
                     finished_average[r_seed, int(episode / average_window)] = finished
+                    duration_average[r_seed, int(episode / average_window)] = duration_sum/average_window
                     #### Write to file ####
                     file = open(path_save + 'training_process' + str(r_seed) + '.txt', 'a')
                     file.write("Total steps: " + str(total_steps) + " Episode: " + str(
@@ -251,9 +264,8 @@ for r_seed in range(0,random_sweep):
 
                     file.close()
                     #### Close File ####
-
-
                     finished = 0
+                    duration_sum = 0
             if r_seed == 0 and episode == 1:  # Only write for first time
 
                 file = open(path_save + 'params_' + str(param_id) + '.txt', 'w')
@@ -285,7 +297,7 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
                 file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: Reward 2, 5 degree Run,SLOW \n\n\n\n')
+                file.write('REMARKS: Slow, Only Lane Reward \n\n\n\n')
 
 
                 file.close()
@@ -324,5 +336,22 @@ plt.tight_layout()
 plt.savefig(path_save + 'finished' + '.png')
 # plt.show()
 plt.close()
+
+
+plt.figure(5)
+ax = plt.subplot(1, 1, 1)
+ax.set_title("Average duration")
+ax.set_xlabel("episode/100")
+ax.set_ylabel("Timesteps")
+ax.grid()
+sns.tsplot(duration_average)
+manager = plt.get_current_fig_manager()
+manager.resize(*manager.window.maxsize())
+# plt.show(block=False)
+plt.tight_layout()
+plt.savefig(path_save + 'duration' + '.png')
+# plt.show()
+plt.close()
+
 
 

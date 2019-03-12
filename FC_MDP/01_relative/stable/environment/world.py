@@ -224,11 +224,11 @@ class World:
         self.reward = 0
         epsilon = 0.5
 
-        self.reward -= self.y_acc * 0.1
+        #self.reward -= self.y_acc * 0.1
         # self.reward -= self.x_acc ** 2  # x_acc
-        self.reward -= (self.speed_limit - self.vehicle_list[0].v)
-        if self.vehicle_list[0].v == self.speed_limit:
-            self.reward + 1
+        #self.reward -= (self.speed_limit - self.vehicle_list[0].v)
+        #if self.vehicle_list[0].v == self.speed_limit:
+        #    self.reward + 1
         # self.lateral_dist = self.vehicle_list[0].y - 2
         # self.reward += (1.375 * self.lateral_dist ** 2 - 6.25 * self.lateral_dist + 5)
         if self.vehicle_list[0].y in {6, 10, 14, 18, 22}:
@@ -256,13 +256,13 @@ class World:
         vehicle_list_sec = [vehicle for vehicle in self.vehicle_list if self.vehicle_list[0].x < vehicle.x]
 
         if(len(vehicle_list_sec) == 0 and self.vehicle_list[0].y == (1-1)*self.road_width + self.road_width*0.5):
-            self.reward += 10000
+            self.reward += 1000
             print("Success at timestep:", self.timestep)
             self.done = True
             self.success = True
 
         if(self.vehicle_list[0].y < 0 or self.vehicle_list[0].y > 2+(self.n_lanes-1)*self.road_width + self.road_width*0.5):
-            self.reward-= 100000
+            self.reward-= 1000
             print("Fail at timestep:", self.timestep)
             self.done = True
             self.success = False

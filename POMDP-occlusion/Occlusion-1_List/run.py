@@ -10,8 +10,8 @@ sns.reset_orig()
 #### Import own modules ####
 import sys
 sys.path.insert(0,'environment/')
-import q_learning
-import world
+import q_learning_pomdp
+import world_pomdp
 import lateral_agent
 import car
 
@@ -30,7 +30,6 @@ def vectorize_state(state):
     state_v = np.concatenate((state_v, v_v))
     return state_v
 
-
 def relative_state(state):
 
     for id_n in range(len(state)-1,-1,-1):
@@ -40,17 +39,21 @@ def relative_state(state):
 
     return state
 
+def processState(states):
+    return np.reshape(states,[input_dim_v])
+
 
 #### Environment parameters ####
 
-num_of_cars = 2
+num_of_cars = 5
 num_of_lanes = 2
 track_length = 300
 speed_limit = 120
 random_seed = 0
 random.seed(random_seed)
 x_range = 10
-
+x_view = 150
+y_view = 5
 
 #### Ego parameters ####
 
@@ -61,6 +64,8 @@ ego_speed_init = speed_limit
 #### Network parameters ####
 
 input_dim = (num_of_cars+1)*3
+input_dim = [x_view*2+1,y_view*2+1]
+input_dim_v = (x_view*2+1)*(y_view*2+1)*8
 output_dim = x_range*num_of_lanes
 hidden_units = 50
 layers = 3
@@ -69,7 +74,8 @@ learning_rate = 0.001
 buffer_size = 50000
 batch_size = 32
 update_freq = 10000
-
+kernel_size = [2,2]
+stride = [2,2]
 #### RL Parameters ####
 
 gamma = 0.99
@@ -79,9 +85,9 @@ estep = 100000
 
 #### Learning Parameters ####
 
-max_train_episodes = 15000
+max_train_episodes = 100000
 pre_train_steps = 100000
-random_sweep = 3
+random_sweep = 10
 tau = 1
 
 
@@ -91,8 +97,9 @@ done = False
 dt = 0.1
 timestep = 0
 
+
 lateral_controller = lateral_agent.lateral_control(dt)
-env = world.World(num_of_cars,num_of_lanes,track_length,speed_limit,ego_pos_init,ego_lane_init,ego_speed_init,dt,random_seed,x_range)
+env = world_pomdp.World(num_of_cars,num_of_lanes,track_length,speed_limit,ego_pos_init,ego_lane_init,ego_speed_init,dt,random_seed,x_range)
 goal_lane = (ego_lane_init - 1) * env.road_width + env.road_width * 0.5
 goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
@@ -100,8 +107,10 @@ action = np.zeros(1) # acc/steer
 
 tf.reset_default_graph()
 
-mainQN = q_learning.qnetwork(input_dim,output_dim,hidden_units,layers,learning_rate,clip_value)
-targetQN = q_learning.qnetwork(input_dim,output_dim,hidden_units,layers,learning_rate,clip_value)
+mainQN = q_learning_pomdp.qnetwork(input_dim_v, output_dim, hidden_units, layers, learning_rate, clip_value,
+                                   kernel_size, stride)
+targetQN = q_learning_pomdp.qnetwork(input_dim_v, output_dim, hidden_units, layers, learning_rate, clip_value,
+                                     kernel_size, stride)
 
 init = tf.global_variables_initializer()
 
@@ -109,9 +118,9 @@ saver = tf.train.Saver()
 
 trainables = tf. trainable_variables()
 
-targetOps = q_learning.updateNetwork(trainables,tau)
+targetOps = q_learning_pomdp.updateNetwork(trainables,tau)
 
-random_sweep= 3
+random_sweep= 5
 
 ## Init environment ##
 
@@ -123,20 +132,17 @@ reward_episode = 0
 total_steps = 0
 
 done = False
-num_of_episodes = "final"
+num_of_episodes = "Final"
 r_seed = 0
 
 #final_save_path = "./long/model_long_random/modelRL_0_"+str(num_of_episodes)+ ".ckpt"
 #final_save_path = "./models/stable_r0/random_0_Final.ckpt"
-#final_save_path = "./training/testing_13/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
-final_save_path = "./training/results_08/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
-
+final_save_path = "./training/testing_init/random_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
 
 # Plotting/Testing Envionment
-max_timestep = 400
+max_timestep = 750
 num_tries = 10
 num_of_finished = 0
-buffer = 5
 
 x_ego_list = np.zeros((num_tries,max_timestep))
 y_ego_list = np.zeros((num_tries,max_timestep))
@@ -146,7 +152,7 @@ x_acc_list = np.zeros((num_tries,max_timestep))
 reward_list = np.zeros((num_tries,max_timestep))
 action_list = np.empty((num_tries,max_timestep))
 action_list_2 = []
-q_values_list = np.empty((num_tries,int(max_timestep/buffer)))
+q_values_list = np.empty((num_tries,int(max_timestep/10)))
 
 
 
@@ -157,12 +163,11 @@ for t in range(0,num_tries):
         done = False
         sess.run(init)
         saver.restore(sess,final_save_path)
-        env = world.World(num_of_cars, num_of_lanes, track_length, speed_limit, ego_pos_init, ego_lane_init,
+        env = world_pomdp.World(num_of_cars, num_of_lanes, track_length, speed_limit, ego_pos_init, ego_lane_init,
                           ego_speed_init, dt, random_seed, x_range)
 
-        state,_,_ = env.get_state()
-        state = relative_state(state)
-        state_v = vectorize_state(state)
+        observation = env.field_of_view()
+        observation_v = processState(observation)
         rewards = []
         test = 0
         flag = 0
@@ -170,18 +175,20 @@ for t in range(0,num_tries):
         total_reward = 0
         while done == False:
 
-            if timestep % buffer == 0:
+            if timestep % 10 == 0:
 
-                action = sess.run(mainQN.action_pred,feed_dict={mainQN.input_state:[state_v]})
-                q_values = sess.run(mainQN.output_q_predict,feed_dict={mainQN.input_state:[state_v]})
-                q_values_list[t, int(timestep/buffer)] = np.amax(q_values)
+                action = sess.run(mainQN.action_pred,feed_dict={mainQN.input_scalar:[observation_v]})
+                q_values = sess.run(mainQN.output_q_predict,feed_dict={mainQN.input_scalar:[observation_v]})
+                q_values_list[t, int(timestep/10)] = np.amax(q_values)
 
                 #action = random.randint(0, x_range * num_of_lanes-1)
                 #print("Action: ", action, "Timestep: ", timestep)
             #action = random.randint(0,x_range*num_of_lanes)
 
             state1,reward,done = env.step(action)
-            state1 = relative_state(state1)
+            observation_1 = env.field_of_view()
+            observation_1_v = processState(observation_1)
+
             rewards.append(reward)
             total_reward += reward
             reward_list[t,timestep] = total_reward
@@ -200,8 +207,7 @@ for t in range(0,num_tries):
             y_acc_list[t, timestep] = env.y_acc
             x_acc_list[t, timestep] = env.x_acc
 
-            state1_v = vectorize_state(state1)
-            state_v = state1_v
+            observation_v = observation_1_v
             timestep += 1
 
         reward_time.append(sum(rewards))
@@ -222,7 +228,7 @@ ax1.set_xlabel('x-position in [m]')
 ax1.set_ylabel('y-position in [m]')
 ax1.set_title('Trajectory distribution')
 ax1.grid()
-plt.savefig(image_save_path + str(num_of_episodes) + "_trajectory_20" +str(r_seed)+".png")
+plt.savefig(image_save_path + str(num_of_episodes) + "_trajectory_" +str(r_seed)+".png")
 plt.show(block=False)
 
 
@@ -237,18 +243,21 @@ sns.tsplot(v_ego_list)
 ax1.set_xlabel('timestep')
 ax1.set_ylabel('velocity in [m/s]')
 ax1.set_title('Velocity')
+ax1.grid()
 ax2 = plt.subplot(3,1,2)
 sns.tsplot(y_acc_list)
 ax2.set_xlabel('timestep')
 ax2.set_ylabel('acc in [m/s^2]')
 ax2.set_title('y-acceleration')
+ax2.grid()
 ax3 = plt.subplot(3,1,3)
 sns.tsplot(x_acc_list)
 ax3.set_xlabel('timestep')
 ax3.set_ylabel('acc in [m/s^2]')
 ax3.set_title('x-acceleration')
+ax3.grid()
 plt.tight_layout()
-plt.savefig(image_save_path + str(num_of_episodes) + "_behaviour_20"+str(r_seed)+".png")
+plt.savefig(image_save_path + str(num_of_episodes) + "_behaviour_"+str(r_seed)+".png")
 plt.show(block=False)
 #plt.show(block=False)
 
@@ -260,7 +269,7 @@ sns.tsplot(reward_list)
 ax1.set_xlabel("timestep")
 ax1.set_ylabel("reward")
 ax1.set_title("Reward")
-plt.savefig(image_save_path + str(num_of_episodes) + "_reward_20"+str(r_seed)+".png")
+plt.savefig(image_save_path + str(num_of_episodes) + "_reward_"+str(r_seed)+".png")
 plt.show(block=False)
 #plt.show()
 
@@ -270,7 +279,7 @@ sns.tsplot(q_values_list)
 ax1.set_xlabel("timestep")
 ax1.set_ylabel("Q-value")
 ax1.set_title("Q-values")
-plt.savefig(image_save_path + str(num_of_episodes) + "_Q_values_20" +str(r_seed)+".png")
+plt.savefig(image_save_path + str(num_of_episodes) + "_Q_values_10" +str(r_seed)+".png")
 #plt.show(block=False)
 plt.show()
 
