@@ -3,25 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e9353c12-b073-411a-ac24-61e0151380fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/main_single.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/run_for.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FC_POMDP-simple/List-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_POMDP-simple/List-01/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/environment/world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/main_single.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/reward_design.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/reward_design.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/run_for.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/environment/world_pomdp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/main_single.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/q_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/q_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/01_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/01_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/01_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/01_relative/stable/main_single.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../List-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../List-01/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../List-01/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../List-01/main_single.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../List-01/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../List-01/run_for.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_for.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simpleOcc/List-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simpleOcc/List-01/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +152,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run_for.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="495">
               <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -264,7 +251,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../POMDP-simpleOcc/List-01" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MDP/01_relative" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -548,7 +535,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/run_for.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="495">
           <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />

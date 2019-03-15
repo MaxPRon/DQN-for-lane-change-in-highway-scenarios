@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f4612ba-85f2-4f6b-8132-da031bd4f2a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/environment/world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/main_single.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/run_for.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FC_POMDP-simple/List-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_POMDP-simple/List-01/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/environment/world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/main_single.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/reward_design.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/reward_design.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/run_for.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/environment/world_pomdp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/main_single.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/q_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/q_learning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-01/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-01/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-01/main_single.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-01/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-01/run_for.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/run_for.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simpleOcc/List-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simpleOcc/List-01/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +71,7 @@
     <session id="862149723">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.3" value="3" />
@@ -440,12 +424,12 @@
   <component name="ToolWindowManager">
     <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35564855" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35564855" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39958158" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

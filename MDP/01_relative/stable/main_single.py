@@ -47,7 +47,7 @@ def relative_state(state):
 num_of_cars = 2
 num_of_lanes = 2
 track_length = 300
-speed_limit = 120
+speed_limit = 60
 random_seed = 0
 random.seed(random_seed)
 x_range = 10
@@ -76,20 +76,20 @@ update_freq = 20000
 gamma = 0.99
 eStart = 1
 eEnd = 0.1
-estep = 1500000
+estep = 150000
 
 #### Learning Parameters ####
 
-max_train_episodes = 20000
+max_train_episodes = 10000
 pre_train_steps = 50000
-random_sweep = 5
+random_sweep = 3
 tau = 1
 
 
 #### Environment ####
 
 done = False
-dt = 0.1
+dt = 0.5
 timestep = 0
 
 lateral_controller = lateral_agent.lateral_control(dt)
@@ -99,7 +99,7 @@ goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
 
 #### Plot variables ####
-max_timestep = 600
+max_timestep = 700
 average_window = 100
 finished = 0
 x_ego_list = np.zeros((random_sweep,max_timestep))
@@ -113,6 +113,7 @@ reward_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 finished_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 
 param_id = "test"
+enable = 1
 
 for r_seed in range(0,random_sweep):
 
@@ -126,7 +127,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_test_02/"
+    path_save = folder_path+ "results_02/"
 
     ## Set up networks ##
 
@@ -179,7 +180,7 @@ for r_seed in range(0,random_sweep):
             done = False
 
             while done == False:
-                if total_steps % 5 == 0:
+                if total_steps % enable == 0:
                     if (np.random.random() < epsilon or total_steps < pre_train_steps):
                         action = random.randint(0,num_of_lanes*x_range-1)
                         #print("RANDOM)")
@@ -280,18 +281,13 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego speed init: ' + str(ego_speed_init) + '\n')
                 file.write('Ego pos init: ' + str(ego_pos_init) + '\n')
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
-                file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
+                file.write('Time differential: ' + str(dt) + '\n')
+                file.write('Enable: ' + str(enable) + '\n')
+                file.write('Non-Ego track length: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: Deeper Network\n\n\n\n')
+                file.write('REMARKS: Different Time step \n\n\n\n')
 
-                file.write("self.reward = 0 \
-                            self.reward -= (self.y_acc**2)*0.12\
-                            self.reward -= self.x_acc**2 # x_acc\
-                            self.reward -= (self.speed_limit - self.vehicle_list[0].v)*2\
-                            self.lateral_dist = self.vehicle_list[0].y - 2\
-                            self.reward += (1.375 * self.lateral_dist ** 2 - 6.25 * self.lateral_dist + 5)\
-                            if self.vehicle_list[0].y in {2,6,10,14,18,22}:\
-                                self.reward += 1")
+
 
                 file.close()
 
