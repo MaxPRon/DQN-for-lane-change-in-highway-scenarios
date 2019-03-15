@@ -116,14 +116,14 @@ total_steps = 0
 
 done = False
 r_seed = 3
-buffer = 10
+buffer = 8
 
-for r_seed in range(0,3):
+for r_seed in range(0,5):
 
     for x in range(0,12000,400):
         num_of_episodes = x
 
-        final_save_path = "./training/results_11/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
+        final_save_path = "./training/results_07/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
         #final_save_path = "./short_2/model_initial/random_0_Final.ckpt"
 
 
@@ -178,7 +178,7 @@ for r_seed in range(0,3):
                     rewards.append(reward)
                     total_reward += reward
                     reward_list[t,timestep] = total_reward
-                    #action_list[t, timestep] = action
+                    action_list[t, timestep] = action
                     #action_list_2.append(action)
 
                     #env.render()
@@ -203,7 +203,7 @@ for r_seed in range(0,3):
 
 
 
-        image_save_path = './training/results_11/Process/'
+        image_save_path = './training/results_07/Process/'
 
         #### Add position Distribution
         x_ego_list[x_ego_list==0] = np.nan
@@ -271,14 +271,21 @@ for r_seed in range(0,3):
 
 
 
-    #plt.figure(5)
-    #ax1 = plt.subplot(1,1,1)
-    #ax1.hist(action_list, bins=20,range=(0,19),histtype='step')
-    #plt.show(block=False)
+        plt.figure(6)
+        ax1 = plt.subplot(1,1,1)
+        ax1.hist(action_list, bins=20,range=(0,19),histtype='step')
+        ax1.set_xlabel("Number of the action")
+        ax1.set_ylabel("Number of times selected")
+        ax1.set_title("Actions")
+        plt.savefig(image_save_path + "action/" + str(num_of_episodes) + "_actions_" + str(r_seed) + ".png")
+        plt.show(block=False)
+        plt.clf()
 
-    #plt.figure(6)
-    #ax1 = plt.subplot(1,1,1)
-    #ax1.hist(action_list_2, bins=20,range=(0,19),histtype='step')
+        #plt.show(block=False)
+
+        #plt.figure(6)
+        #ax1 = plt.subplot(1,1,1)
+        #ax1.hist(action_list_2, bins=20,range=(0,19),histtype='step')
     #plt.show()
 
 

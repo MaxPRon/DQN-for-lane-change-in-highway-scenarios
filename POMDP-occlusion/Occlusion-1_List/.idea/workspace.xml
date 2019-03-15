@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0331383e-1a09-46ad-888b-2ca8a72b2047" name="Default Changelist" comment="" />
+    <list default="true" id="0331383e-1a09-46ad-888b-2ca8a72b2047" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/run_for.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_POMDP-simple/List-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_POMDP-simple/List-01/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/environment/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/reward_design.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/reward_design.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/run_for.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/environment/world_pomdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/q_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/q_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/run_for.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +136,25 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="17515499">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="208" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="208" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -165,24 +202,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/environment/world_pomdp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+            <state relative-caret-position="264">
+              <caret line="437" column="13" lean-forward="true" selection-start-line="437" selection-start-column="13" selection-end-line="437" selection-end-column="13" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1548063673489" expanded="true" signature="17565:17575" ph="..." />
+                <marker date="1552388054788" expanded="true" signature="7058:7087" ph="..." />
+                <marker date="1552388054788" expanded="true" signature="17684:17694" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_single.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="277" column="62" lean-forward="true" selection-start-line="277" selection-start-column="62" selection-end-line="277" selection-end-column="62" />
+            <state relative-caret-position="260">
+              <caret line="190" column="17" selection-start-line="190" selection-start-column="17" selection-end-line="190" selection-end-column="17" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -193,7 +231,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_single_pomdp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="-2700">
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -218,6 +256,9 @@
       <find>x_dim</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -230,11 +271,12 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1985" />
+    <option name="x" value="65" />
     <option name="y" value="-4" />
     <option name="width" value="1855" />
     <option name="height" value="1084" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -260,7 +302,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MDP/01_relative" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -283,7 +325,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/tensorflow_gpu/AD_python3_gpu/bin/python" />
+      <option name="SDK_HOME" value="$USER_HOME$/tensorflow/AD_python3/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -366,22 +408,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4819869" weight="0.32881" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48471615" weight="0.39874738" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4808952" weight="0.32845187" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48417032" weight="0.39853558" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5180131" side_tool="true" visible="true" weight="0.32881" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5191048" side_tool="true" visible="true" weight="0.32845187" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -396,12 +438,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/environment/world_pomdp.py</url>
-          <line>358</line>
+          <line>366</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/environment/world_pomdp.py</url>
-          <line>399</line>
+          <line>407</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
@@ -437,25 +479,6 @@
         <state relative-caret-position="-2978" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environment/lateral_agent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/q_learning_pomdp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -473,26 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environment/world_pomdp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1548063673489" expanded="true" signature="17565:17575" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_single_pomdp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/tensorflow/AD_python3/lib/python3.5/site-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33915">
@@ -500,12 +503,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_single.py">
+    <entry file="file://$PROJECT_DIR$/q_learning_pomdp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="277" column="62" lean-forward="true" selection-start-line="277" selection-start-column="62" selection-end-line="277" selection-end-column="62" />
+        <state relative-caret-position="345">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/lateral_agent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_single_pomdp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2700">
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_single.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="190" column="17" selection-start-line="190" selection-start-column="17" selection-end-line="190" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environment/world_pomdp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="437" column="13" lean-forward="true" selection-start-line="437" selection-start-column="13" selection-end-line="437" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1552388054788" expanded="true" signature="7058:7087" ph="..." />
+            <marker date="1552388054788" expanded="true" signature="17684:17694" ph="..." />
           </folding>
         </state>
       </provider>

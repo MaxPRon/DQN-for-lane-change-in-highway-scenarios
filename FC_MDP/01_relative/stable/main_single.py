@@ -80,7 +80,7 @@ estep = 150000
 
 #### Learning Parameters ####
 
-max_train_episodes = 50000
+max_train_episodes = 30000
 pre_train_steps = 100000
 random_sweep = 3
 tau = 1
@@ -99,7 +99,7 @@ goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
 
 #### Plot variables ####
-max_timestep = 600
+max_timestep = 400
 average_window = 100
 finished = 0
 x_ego_list = np.zeros((random_sweep,max_timestep))
@@ -117,7 +117,7 @@ duration_sum_list = np.zeros((random_sweep,max_train_episodes))
 duration_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 
 param_id = "test"
-enable = 10
+enable = 1
 
 for r_seed in range(0,random_sweep):
 
@@ -131,7 +131,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "results_blabla/"
+    path_save = folder_path+ "results_12/"
 
     ## Set up networks ##
 
@@ -243,7 +243,7 @@ for r_seed in range(0,random_sweep):
             if env.success == True:
                 finished += 1
 
-            if episode % 5000 == 0:
+            if episode % 2000 == 0:
                 save_path = saver.save(sess,path_save+"modelRL_"+str(r_seed)+"_"+str(episode)+".ckpt")
                 print("Model saved in: ",save_path)
             if episode % average_window == 0:
@@ -297,7 +297,7 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
                 file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: Slow, Only Lane Reward \n\n\n\n')
+                file.write('REMARKS: Slow, Only Lane Reward, Add maximzing velocity, Penalize y \n\n\n\n')
 
 
                 file.close()

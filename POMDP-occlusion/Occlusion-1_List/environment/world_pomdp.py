@@ -197,12 +197,20 @@ class World:
 
         self.lane_prev = self.lane
         vehicle_list_c = copy.deepcopy(self.vehicle_list)
-        self.field_of_view()
-        self.add_dimension()
+        if self.timestep % 10:
+
+            self.field_of_view()
+            self.add_dimension()
+        ### Check Plausibility
+
         observation = copy.deepcopy(self.observation_grid)
 
 
         return vehicle_list_c, self.reward, self.done
+
+    def match(self):
+
+        print("Test")
 
     def IDM(self, id):
 
@@ -313,7 +321,7 @@ class World:
         return self.reward
     def field_of_view(self):
 
-        self.number_of_frames = 4
+        self.number_of_frames = 1
 
         self.observation_grid = np.zeros((self.x_view*2+1,(self.y_view*2+1),2*self.number_of_frames))
         self.observation_temp = np.zeros((self.x_view*2+1,self.y_view*2+1,2*self.number_of_frames))
@@ -356,7 +364,7 @@ class World:
         #### Transform into new resolution
         if len(localization_global) > 1:
 
-            tic = time.time()
+            #tic = time.time()
             for n in range(0,len(localization_global)):
                 #print("x-before: ",localization_global[n][0])
                 #print("y-before: ", localization_global[n][1])
@@ -364,7 +372,7 @@ class World:
                 localization_transformed[n][1] = localization_global[n][1]*self.resolution
                 #print("x-before: ", localization_transformed[n][0])
                 #print("y-before: ", localization_transformed[n][1])
-            toc = time.time()
+            #toc = time.time()
             #print("Time for loop: ",tic-toc)
 
             #### Add Body

@@ -117,12 +117,12 @@ total_steps = 0
 done = False
 r_seed = 3
 
-for r_seed in range(0,3):
+for r_seed in range(0,5):
 
-    for x in range(0,15000,400):
+    for x in range(0,20000,400):
         num_of_episodes = x
 
-        final_save_path = "./training/testing_02/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
+        final_save_path = "./training/testing_04/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
         #final_save_path = "./short_2/model_initial/random_0_Final.ckpt"
 
 
@@ -202,7 +202,7 @@ for r_seed in range(0,3):
 
 
 
-        image_save_path = './training/testing_02/Process/'
+        image_save_path = './training/testing_04/Process/'
 
         #### Add position Distribution
         x_ego_list[x_ego_list==0] = np.nan

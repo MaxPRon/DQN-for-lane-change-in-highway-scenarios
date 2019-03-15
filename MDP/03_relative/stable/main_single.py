@@ -33,9 +33,9 @@ def vectorize_state(state):
 def relative_state(state):
 
     for id_n in range(len(state)-1,-1,-1):
-        state[id_n].x = state[id_n].x-state[0].x
-        state[id_n].y = state[id_n].x - state[0].y
-        state[id_n].v = state[id_n].x - state[0].v
+        state[id_n].x = state[id_n].x - state[0].x
+        state[id_n].y = state[id_n].y - state[0].y
+        state[id_n].v = state[id_n].v - state[0].v
 
     return state
 
@@ -44,7 +44,7 @@ def relative_state(state):
 
 #### Environment parameters ####
 
-num_of_cars = 2
+num_of_cars = 3
 num_of_lanes = 2
 track_length = 300
 speed_limit = 120
@@ -76,13 +76,13 @@ update_freq = 20000
 gamma = 0.99
 eStart = 1
 eEnd = 0.1
-estep = 1500000
+estep = 150000
 
 #### Learning Parameters ####
 
-max_train_episodes = 7500
-pre_train_steps = 50000
-random_sweep = 3
+max_train_episodes = 20000
+pre_train_steps = 100000
+random_sweep = 5
 tau = 1
 
 
@@ -99,7 +99,7 @@ goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
 
 #### Plot variables ####
-max_timestep = 800
+max_timestep = 650
 average_window = 100
 finished = 0
 x_ego_list = np.zeros((random_sweep,max_timestep))
@@ -111,7 +111,7 @@ reward_list = np.zeros((random_sweep,max_timestep))
 reward_sum_list = np.zeros((random_sweep,max_train_episodes))
 reward_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
 finished_average = np.zeros((random_sweep,int(max_train_episodes/average_window)))
-
+enable= 10
 param_id = "test"
 
 for r_seed in range(0,random_sweep):
@@ -126,7 +126,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_05/"
+    path_save = folder_path+ "results_01/"
 
     ## Set up networks ##
 
@@ -179,7 +179,7 @@ for r_seed in range(0,random_sweep):
             done = False
 
             while done == False:
-                if total_steps % 5 == 0:
+                if total_steps % enable == 0:
                     if (np.random.random() < epsilon or total_steps < pre_train_steps):
                         action = random.randint(0,num_of_lanes*x_range-1)
                         #print("RANDOM)")
@@ -187,7 +187,7 @@ for r_seed in range(0,random_sweep):
                         action = sess.run(mainQN.action_pred,feed_dict={mainQN.input_state:[state_v]})
                         #print("Network")
 
-                state1, reward,done = env.step(action)
+                state1, reward, done = env.step(action)
                 state1 = relative_state(state1)
                 state1_v = vectorize_state(state1)
 
@@ -267,29 +267,27 @@ for r_seed in range(0,random_sweep):
                 file.write('Tau: ' + str(tau) + '\n\n')
 
                 file.write('RL PARAMETERS: \n\n')
+                file.write('Episodes: ' + str(max_train_episodes) + '\n')
+                file.write("Random seeds: "+ str(random_sweep) + '\n')
                 file.write('Gamma: ' + str(gamma) + '\n')
                 file.write('Epsilon start: ' + str(eStart) + '\n')
                 file.write('Epsilon end: ' + str(eEnd) + '\n')
                 file.write('Epsilon steps: ' + str(estep) + '\n\n')
 
                 file.write('SCENARIO PARAMETERS: \n\n')
+                file.write('Action buffer' + str(enable) + '\n')
+                file.write('Max_length' + str(max_timestep) + '\n')
                 file.write('Cars: ' + str(num_of_cars) + '\n')
                 file.write('Lanes: ' + str(num_of_lanes) + '\n')
                 file.write('Ego speed init: ' + str(ego_speed_init) + '\n')
                 file.write('Ego pos init: ' + str(ego_pos_init) + '\n')
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
+                file.write('Time step: ' + str(dt) + '\n')
                 file.write('Non-Ego tracklength: ' + str(track_length) + "\n\n\n")
 
-                file.write('REMARKS: Reversed Direction, Global Component \n\n\n\n')
+                file.write('REMARKS: Use of Reward 2, Different timestep \n\n\n\n')
 
-                file.write("self.reward = 0 \
-                            self.reward -= (self.y_acc**2)*0.12\
-                            self.reward -= self.x_acc**2 # x_acc\
-                            self.reward -= (self.speed_limit - self.vehicle_list[0].v)*2\
-                            self.lateral_dist = self.vehicle_list[0].y - 2\
-                            self.reward += (1.375 * self.lateral_dist ** 2 - 6.25 * self.lateral_dist + 5)\
-                            if self.vehicle_list[0].y in {2,6,10,14,18,22}:\
-                                self.reward += 1")
+
 
                 file.close()
 

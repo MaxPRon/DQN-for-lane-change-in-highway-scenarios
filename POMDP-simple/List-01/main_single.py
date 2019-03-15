@@ -67,20 +67,20 @@ update_freq = 20000
 gamma = 0.99
 eStart = 1
 eEnd = 0.1
-estep = 1500000
+estep = 150000
 
 #### Learning Parameters ####
 
-max_train_episodes = 20000
+max_train_episodes = 10000
 pre_train_steps = 100000
-random_sweep = 5
+random_sweep = 3
 tau = 1
 
 
 #### Environment ####
 
 done = False
-dt = 0.1
+dt = 1
 timestep = 0
 
 lateral_controller = lateral_agent.lateral_control(dt)
@@ -105,6 +105,8 @@ finished_average = np.zeros((random_sweep,int(max_train_episodes/average_window)
 
 param_id = "test"
 
+enable = 1
+
 for r_seed in range(0,random_sweep):
 
     random.seed(r_seed)
@@ -117,7 +119,7 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_04/"
+    path_save = folder_path+ "testing_07/"
 
     ## Set up networks ##
 
@@ -169,7 +171,7 @@ for r_seed in range(0,random_sweep):
             done = False
 
             while done == False:
-                if total_steps % 5 == 0:
+                if total_steps % enable == 0:
                     if (np.random.random() < epsilon or total_steps < pre_train_steps):
                         action = random.randint(0,num_of_lanes*x_range-1)
                         #print("RANDOM)")
@@ -269,6 +271,8 @@ for r_seed in range(0,random_sweep):
                 file.write('Ego speed init: ' + str(ego_speed_init) + '\n')
                 file.write('Ego pos init: ' + str(ego_pos_init) + '\n')
                 file.write('Ego lane init: ' + str(ego_lane_init) + '\n')
+                file.write('Time differential: ' + str(dt) + '\n')
+                file.write('Enable: ' + str(enable) + '\n')
                 file.write('Non-Ego track length: ' + str(track_length) + "\n\n\n")
 
                 file.write('REMARKS: Simple Overtake Scenario, No coming traffic, Long Training \n\n\n\n')

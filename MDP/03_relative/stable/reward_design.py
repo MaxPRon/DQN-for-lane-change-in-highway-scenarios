@@ -35,8 +35,8 @@ def relative_state(state):
 
     for id_n in range(len(state)-1,-1,-1):
         state[id_n].x = state[id_n].x-state[0].x
-        state[id_n].y = state[id_n].x - state[0].y
-        state[id_n].v = state[id_n].x - state[0].v
+        state[id_n].y = state[id_n].y - state[0].y
+        state[id_n].v = state[id_n].v - state[0].v
 
     return state
 
@@ -108,14 +108,14 @@ reward_episode = 0
 total_steps = 0
 
 done = False
-test_case = "next_lane"
+#test_case = "next_lane"
 #test_case = "return"
-#test_case = "nothing"
+test_case = "nothing"
 #test_case = "random"
 
 
 # Plotting/Testing Envionment
-max_timestep = 800
+max_timestep = 350
 num_tries = 100
 num_of_finished = 0
 
@@ -147,19 +147,28 @@ for t in range(0,num_tries):
     timestep = 0
     total_reward = 0
     action = 0
+
+    for i in range(1,3):
+        print(i)
+        if env.vehicle_list[i].y == 6:
+            upper_lane_car = i
+        if env.vehicle_list[i].y == 2:
+            lower_lane_car = i
     while done == False:
         ego_car = env.get_ego()
+        state_list, _, _ = env.get_state()
         if test_case == "return":
-            if env.dist_to_front < 100 and env.dist_to_front > 0 and ego_car[1] == 2:
+            #if env.dist_to_front < 100 and env.dist_to_front > 0 and ego_car[1] == 2:
+            if state_list[0].x > state_list[upper_lane_car].x+10:
                 action = 14
                 print("Action: ", action, "Timestep: ", timestep, "Ego-position: ",ego_car[0])
-
-            if env.dist_to_front == -1 and ego_car[1]==6 and env.vehicle_list[0].x > env.vehicle_list[1].x and env.vehicle_list[0].x > env.vehicle_list[2].x:
+            print("Position y:",ego_car[1])
+            if env.dist_to_front == -1 and env.vehicle_list[0].x > env.vehicle_list[lower_lane_car].x + 50 and env.vehicle_list[0].x > env.vehicle_list[upper_lane_car].x:
                 action = 5
                 print("Action: ", action, "Timestep: ", timestep, "Ego-position: ", ego_car[0])
 
         if test_case == "next_lane":
-            if env.dist_to_front < 100 and env.dist_to_front > 0 and ego_car[1] == 2:
+            if state_list[0].x > state_list[upper_lane_car].x + 10:
                 action = 14
                 print("Action: ", action, "Timestep: ", timestep, "Ego-position: ", ego_car[0])
 
@@ -179,7 +188,7 @@ for t in range(0,num_tries):
         #action_list[t, timestep] = action
         #action_list_2.append(action)
 
-        env.render()
+        #env.render()
         if env.success == True:
             num_of_finished += 1
 

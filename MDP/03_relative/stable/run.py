@@ -35,8 +35,8 @@ def relative_state(state):
 
     for id_n in range(len(state)-1,-1,-1):
         state[id_n].x = state[id_n].x-state[0].x
-        state[id_n].y = state[id_n].x - state[0].y
-        state[id_n].v = state[id_n].x - state[0].v
+        state[id_n].y = state[id_n].y - state[0].y
+        state[id_n].v = state[id_n].v - state[0].v
 
     return state
 
@@ -79,9 +79,9 @@ estep = 100000
 
 #### Learning Parameters ####
 
-max_train_episodes = 100000
+max_train_episodes = 15000
 pre_train_steps = 100000
-random_sweep = 10
+random_sweep = 3
 tau = 1
 
 
@@ -92,9 +92,9 @@ dt = 0.1
 timestep = 0
 
 lateral_controller = lateral_agent.lateral_control(dt)
-#env = world.World(num_of_cars,num_of_lanes,track_length,speed_limit,ego_pos_init,ego_lane_init,ego_speed_init,dt,random_seed,x_range)
-#goal_lane = (ego_lane_init - 1) * env.road_width + env.road_width * 0.5
-#goal_lane_prev = goal_lane
+env = world.World(num_of_cars,num_of_lanes,track_length,speed_limit,ego_pos_init,ego_lane_init,ego_speed_init,dt,random_seed,x_range)
+goal_lane = (ego_lane_init - 1) * env.road_width + env.road_width * 0.5
+goal_lane_prev = goal_lane
 action = np.zeros(1) # acc/steer
 
 
@@ -111,7 +111,7 @@ trainables = tf. trainable_variables()
 
 targetOps = q_learning.updateNetwork(trainables,tau)
 
-random_sweep= 5
+random_sweep= 3
 
 ## Init environment ##
 
@@ -123,19 +123,20 @@ reward_episode = 0
 total_steps = 0
 
 done = False
-num_of_episodes = "2400"
+num_of_episodes = "final"
 r_seed = 0
 
 #final_save_path = "./long/model_long_random/modelRL_0_"+str(num_of_episodes)+ ".ckpt"
 #final_save_path = "./models/stable_r0/random_0_Final.ckpt"
 #final_save_path = "./training/testing_13/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
-final_save_path = "./training/testing_03/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
+final_save_path = "./training/results_08/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
 
 
 # Plotting/Testing Envionment
-max_timestep = 800
-num_tries = 20
+max_timestep = 400
+num_tries = 10
 num_of_finished = 0
+buffer = 5
 
 x_ego_list = np.zeros((num_tries,max_timestep))
 y_ego_list = np.zeros((num_tries,max_timestep))
@@ -145,8 +146,7 @@ x_acc_list = np.zeros((num_tries,max_timestep))
 reward_list = np.zeros((num_tries,max_timestep))
 action_list = np.empty((num_tries,max_timestep))
 action_list_2 = []
-q_values_list = np.empty((num_tries,int(max_timestep/10)))
-
+q_values_list = np.empty((num_tries,int(max_timestep/buffer)))
 
 
 
@@ -170,11 +170,11 @@ for t in range(0,num_tries):
         total_reward = 0
         while done == False:
 
-            if timestep % 5 == 0:
+            if timestep % buffer == 0:
 
                 action = sess.run(mainQN.action_pred,feed_dict={mainQN.input_state:[state_v]})
                 q_values = sess.run(mainQN.output_q_predict,feed_dict={mainQN.input_state:[state_v]})
-                q_values_list[t, int(timestep/10)] = np.amax(q_values)
+                q_values_list[t, int(timestep/buffer)] = np.amax(q_values)
 
                 #action = random.randint(0, x_range * num_of_lanes-1)
                 #print("Action: ", action, "Timestep: ", timestep)
@@ -222,7 +222,7 @@ ax1.set_xlabel('x-position in [m]')
 ax1.set_ylabel('y-position in [m]')
 ax1.set_title('Trajectory distribution')
 ax1.grid()
-plt.savefig(image_save_path + str(num_of_episodes) + "_trajectory_3" +str(r_seed)+".png")
+plt.savefig(image_save_path + str(num_of_episodes) + "_trajectory_20" +str(r_seed)+".png")
 plt.show(block=False)
 
 
@@ -248,7 +248,7 @@ ax3.set_xlabel('timestep')
 ax3.set_ylabel('acc in [m/s^2]')
 ax3.set_title('x-acceleration')
 plt.tight_layout()
-plt.savefig(image_save_path + str(num_of_episodes) + "_behaviour_3"+str(r_seed)+".png")
+plt.savefig(image_save_path + str(num_of_episodes) + "_behaviour_20"+str(r_seed)+".png")
 plt.show(block=False)
 #plt.show(block=False)
 
@@ -260,7 +260,7 @@ sns.tsplot(reward_list)
 ax1.set_xlabel("timestep")
 ax1.set_ylabel("reward")
 ax1.set_title("Reward")
-plt.savefig(image_save_path + str(num_of_episodes) + "_reward_3"+str(r_seed)+".png")
+plt.savefig(image_save_path + str(num_of_episodes) + "_reward_20"+str(r_seed)+".png")
 plt.show(block=False)
 #plt.show()
 
@@ -270,7 +270,7 @@ sns.tsplot(q_values_list)
 ax1.set_xlabel("timestep")
 ax1.set_ylabel("Q-value")
 ax1.set_title("Q-values")
-plt.savefig(image_save_path + str(num_of_episodes) + "_q_values_3" +str(r_seed)+".png")
+plt.savefig(image_save_path + str(num_of_episodes) + "_Q_values_20" +str(r_seed)+".png")
 #plt.show(block=False)
 plt.show()
 

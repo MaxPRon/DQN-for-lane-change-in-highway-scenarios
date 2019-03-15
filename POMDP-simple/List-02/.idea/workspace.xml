@@ -6,12 +6,21 @@
       <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/main_single.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/run_for.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/01_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/01_relative/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MDP/02_relative/stable/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/02_relative/stable/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CNN-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CNN-1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/environment/world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_POMDP-simple/List-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_POMDP-simple/List-01/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/environment/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/reward_design.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/reward_design.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MDP/03_relative/stable/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MDP/03_relative/stable/run_for.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/environment/world_pomdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/q_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/q_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../List-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../List-01/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../List-01/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../List-01/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../List-01/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/../List-01/run_for.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run_for.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_for.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -107,12 +116,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="607" />
+          <entry key="py" value="721" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="607" />
+          <entry key="Python" value="721" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -129,11 +138,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_single.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="121" selection-start-line="121" selection-end-line="121" />
+            <state relative-caret-position="880">
+              <caret line="258" selection-start-line="258" selection-end-line="258" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -153,11 +162,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run_for.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-26">
-              <caret line="106" selection-start-line="106" selection-end-line="106" />
+            <state relative-caret-position="270">
+              <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -217,9 +226,9 @@
         <option value="$PROJECT_DIR$/stable/main_single.py" />
         <option value="$PROJECT_DIR$/environment/car.py" />
         <option value="$PROJECT_DIR$/run.py" />
-        <option value="$PROJECT_DIR$/run_for.py" />
         <option value="$PROJECT_DIR$/main_single.py" />
         <option value="$PROJECT_DIR$/environment/world.py" />
+        <option value="$PROJECT_DIR$/run_for.py" />
       </list>
     </option>
   </component>
@@ -255,7 +264,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MDP/01_relative" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../POMDP-simpleOcc/List-01" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -270,7 +279,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main_single (1)">
+  <component name="RunManager" selected="Python.run_for (1)">
     <configuration name="main_single (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="02_relative" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -385,8 +394,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main_single (1)" />
         <item itemvalue="Python.run_for (1)" />
+        <item itemvalue="Python.main_single (1)" />
         <item itemvalue="Python.run (1)" />
         <item itemvalue="Python.main_single" />
         <item itemvalue="Python.run_for" />
@@ -517,16 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_for.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="106" selection-start-line="106" selection-end-line="106" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/environment/world.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
@@ -539,8 +538,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main_single.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
+        <state relative-caret-position="880">
+          <caret line="258" selection-start-line="258" selection-end-line="258" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_for.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

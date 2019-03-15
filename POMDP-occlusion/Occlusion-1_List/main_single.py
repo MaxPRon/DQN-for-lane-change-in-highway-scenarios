@@ -8,7 +8,7 @@ import seaborn as sns
 #### Import own modules ####
 import sys
 sys.path.insert(0,'environment/')
-import q_learning_pomdp
+import q_learning
 import world_pomdp
 import lateral_agent
 
@@ -63,11 +63,12 @@ y_dim = (y_view * 2 + 1) * resolution
 
 #input_dim = [x_view*2+1,((y_view*2)+1)]
 #input_dim_v = (x_view*2+1)*((y_view*2)+1)*8
-input_dim = [x_dim,y_dim]
-input_dim_v = x_dim*y_dim
+#input_dim = [x_dim,y_dim]
+#input_dim_v = x_dim*y_dim
 
-
+input_dim = (num_of_cars+1)*3
 output_dim = (x_range*num_of_lanes)
+
 hidden_units = 50
 layers = 3
 clip_value = 7500
@@ -121,6 +122,8 @@ finished_average = np.zeros((random_sweep,int(max_train_episodes/average_window)
 
 param_id = "test"
 
+enable = 10
+
 for r_seed in range(0,random_sweep):
     start = time.time()
 
@@ -134,14 +137,14 @@ for r_seed in range(0,random_sweep):
 
     folder_path = './training/'
 
-    path_save = folder_path+ "testing_01/"
+    path_save = folder_path+ "testing_bla/"
 
     ## Set up networks ##
 
     tf.reset_default_graph()
 
-    mainQN = q_learning_pomdp.qnetwork(input_dim_v, output_dim, hidden_units, layers, learning_rate, clip_value,kernel_size,stride)
-    targetQN = q_learning_pomdp.qnetwork(input_dim_v, output_dim, hidden_units, layers, learning_rate, clip_value,kernel_size,stride)
+    mainQN = q_learning.qnetwork(input_dim, output_dim, hidden_units, layers, learning_rate, clip_value)
+    targetQN = q_learning.qnetwork(input_dim, output_dim, hidden_units, layers, learning_rate, clip_value)
 
     init = tf.global_variables_initializer()
 
@@ -149,11 +152,11 @@ for r_seed in range(0,random_sweep):
 
     trainables = tf.trainable_variables()
 
-    targetOps = q_learning_pomdp.updateNetwork(trainables, tau)
+    targetOps = q_learning.updateNetwork(trainables, tau)
 
     load_model = False
     ## Create replay buffer ##
-    exp_buffer = q_learning_pomdp.replay_buffer(buffer_size)
+    exp_buffer = q_learning.replay_buffer(buffer_size)
 
     ## Randomness of actions ##
     epsilon = eStart
@@ -167,41 +170,42 @@ for r_seed in range(0,random_sweep):
         sess.run(init)
         start = time.time()
         for episode in range(max_train_episodes):
-            print("Episode: ",episode," Timestep: ",total_steps)
-            episode_buffer = q_learning_pomdp.replay_buffer(buffer_size)
+            #print("Episode: ",episode," Timestep: ",total_steps)
+            episode_buffer = q_learning.replay_buffer(buffer_size)
             env = world_pomdp.World(num_of_cars, num_of_lanes, track_length, speed_limit, ego_pos_init, ego_lane_init,
                               ego_speed_init,
                               dt, r_seed, x_range)
+            state, _, _ = env.get_state()
+            state_v = vectorize_state(state)
 
-            observation = env.field_of_view()
-            observation = env.grid
-            observation_v = processState(observation)
+            #observation = env.field_of_view()
+            #observation = env.grid
+            #observation_v = processState(observation)
 
             reward_sum = 0
             timestep = 0
             action = 0
             done = False
-
+            tic = time.time()
             while done == False:
-                print("Episode: ", episode, " Timestep: ", total_steps)
+                #print("Episode: ", episode, " Timestep: ", total_steps)
 
-                if total_steps % 5 == 0:
+                if total_steps % enable == 0:
                     if (np.random.random() < epsilon or total_steps < pre_train_steps):
                         action = random.randint(0,num_of_lanes*x_range-1)
                     else:
-                        action = sess.run(mainQN.action_pred,feed_dict={mainQN.input_scalar:[observation_v]})
+                        action = sess.run(mainQN.action_pred,feed_dict={mainQN.input_scalar:[state_v]})
 
-                state1, reward,done = env.step(action)
-                observation_1 = env.field_of_view()
-                observation_1 = env.grid
-                observation_1_v = processState(observation_1)
+
+                state1, reward, done = env.step(action)
+                state1_v = vectorize_state(state1)
 
 
 
                 total_steps += 1
 
                 #episode_buffer.add(np.reshape(np.array([state_v,action,reward,state1_v,done]),[1,5]))
-                episode_buffer.add(np.reshape(np.array([observation_v, action, reward, observation_1_v, done]), [1, 5]))
+                episode_buffer.add(np.reshape(np.array([state_v, action, reward, state1_v, done]), [1, 5]))
                 if total_steps > pre_train_steps:
                     if epsilon > eEnd:
                         epsilon-=stepDrop
@@ -224,12 +228,14 @@ for r_seed in range(0,random_sweep):
                     ## Update target network ##
                     if total_steps % update_freq == 0:
                         print("Update target network!")
-                        q_learning_pomdp.updateTarget(targetOps,sess)
+                        q_learning.updateTarget(targetOps,sess)
 
                 reward_sum+=reward
 
-                observation_v = observation_1_v
+                state_v = state1_v
                 #env.render()
+            toc = time.time()
+            print("Time per Episode ",tic-toc)
             exp_buffer.add(episode_buffer.buffer)
             reward_sum_list[r_seed, episode] = reward_sum
             end = time.time()
@@ -273,12 +279,16 @@ for r_seed in range(0,random_sweep):
                 file.write('Tau: ' + str(tau) + '\n\n')
 
                 file.write('RL PARAMETERS: \n\n')
+                file.write('Episodes: ' + str(max_train_episodes) + '\n')
+                file.write("Random seeds: " + str(random_sweep) + '\n')
                 file.write('Gamma: ' + str(gamma) + '\n')
                 file.write('Epsilon start: ' + str(eStart) + '\n')
                 file.write('Epsilon end: ' + str(eEnd) + '\n')
                 file.write('Epsilon steps: ' + str(estep) + '\n\n')
 
                 file.write('SCENARIO PARAMETERS: \n\n')
+                file.write('Action buffer' + str(enable) + '\n')
+                file.write('Max_length' + str(max_timestep) + '\n')
                 file.write('Cars: ' + str(num_of_cars) + '\n')
                 file.write('Lanes: ' + str(num_of_lanes) + '\n')
                 file.write('Ego speed init: ' + str(ego_speed_init) + '\n')

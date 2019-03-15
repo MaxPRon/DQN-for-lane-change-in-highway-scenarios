@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9353c12-b073-411a-ac24-61e0151380fc" name="Default Changelist" comment="" />
+    <list default="true" id="e9353c12-b073-411a-ac24-61e0151380fc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../FC_MDP/01_relative/stable/environment/world.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/environment/world_pomdp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/environment/world_pomdp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/main_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/main_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/q_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-occlusion/Occlusion-1_List/q_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../POMDP-simple/List-02/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,9 +93,9 @@
     <session id="71458953">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.0" value="3" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.0" value="4" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -117,7 +125,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_single.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3210">
+            <state relative-caret-position="3090">
               <caret line="214" column="16" selection-start-line="214" selection-start-column="16" selection-end-line="214" selection-end-column="16" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -140,7 +148,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_for.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
+            <state relative-caret-position="375">
               <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -152,8 +160,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/environment/world.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="266" selection-start-line="266" selection-end-line="266" />
+            <state relative-caret-position="206">
+              <caret line="244" column="8" selection-start-line="244" selection-start-column="8" selection-end-line="244" selection-end-column="54" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -162,6 +170,9 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -183,12 +194,12 @@
     <option name="width" value="1855" />
     <option name="height" value="1084" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,6 +221,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,7 +367,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32985386" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32985386" />
@@ -413,7 +425,7 @@
     <entry file="file://$PROJECT_DIR$/stable/reward_design.py" />
     <entry file="file://$PROJECT_DIR$/main_single.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3210">
+        <state relative-caret-position="3090">
           <caret line="214" column="16" selection-start-line="214" selection-start-column="16" selection-end-line="214" selection-end-column="16" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -432,7 +444,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/run_for.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
+        <state relative-caret-position="375">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -442,8 +454,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/environment/world.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="266" selection-start-line="266" selection-end-line="266" />
+        <state relative-caret-position="206">
+          <caret line="244" column="8" selection-start-line="244" selection-start-column="8" selection-end-line="244" selection-end-column="54" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

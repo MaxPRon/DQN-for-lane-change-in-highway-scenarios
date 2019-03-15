@@ -224,7 +224,9 @@ class World:
         self.reward = 0
         epsilon = 0.5
 
-        #self.reward -= self.y_acc * 0.1
+
+        self.reward += 1/(1+(self.speed_limit - self.vehicle_list[0].v))
+        self.reward -= self.y_acc * 0.1
         # self.reward -= self.x_acc ** 2  # x_acc
         #self.reward -= (self.speed_limit - self.vehicle_list[0].v)
         #if self.vehicle_list[0].v == self.speed_limit:

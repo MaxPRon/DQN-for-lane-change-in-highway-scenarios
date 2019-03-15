@@ -130,15 +130,15 @@ enable = 2
 
 for r_seed in range(0,3):
 
-    for x in range(0,50000,5000):
+    for x in range(0,60000,5000):
         num_of_episodes = x
 
-        final_save_path = "./training/results_06/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
+        final_save_path = "./training/results_11/modelRL_"+str(r_seed)+"_"+str(num_of_episodes)+ ".ckpt"
         #final_save_path = "./short_2/model_initial/random_0_Final.ckpt"
 
 
         # Plotting/Testing Envionment
-        max_timestep = 750
+        max_timestep = 400
         num_tries = 10
         num_of_finished = 0
 
@@ -216,7 +216,7 @@ for r_seed in range(0,3):
 
 
 
-        image_save_path = './training/testing_03/Process/'
+        image_save_path = './training/results_11/Process/'
 
         #### Add position Distribution
         x_ego_list[x_ego_list==0] = np.nan

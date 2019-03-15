@@ -7,8 +7,6 @@ from matplotlib.cbook import get_sample_data
 import lateral_agent
 import copy
 
-# Blabla
-
 
 
 
@@ -30,12 +28,12 @@ class World:
         self.dt = dt
         random.seed(r_seed)
         self.vehicle_list = []
-        self.max_timestep = 800
         # Ego Car
         v_init = random.random() * (ego_speed_init/3.6)
         self.x_base = 0
         self.vehicle_list.append(car.Car(init_pos,self.lane_init,v_init,0,speed_limit,self.dt))
         self.dist_to_front = -1
+        self.non_ego_limit = self.speed_limit * 0.4
 
         ### RL Params
         self.done = False
@@ -45,7 +43,7 @@ class World:
         self.lane = self.lane_init
         self.lane_prev = self.lane_init
         self.x_goal = 3
-        self.non_ego_limit = self.speed_limit*0.4
+
 
         self.lateral_controller = lateral_agent.lateral_control(dt)
 
@@ -55,21 +53,28 @@ class World:
 
         alist = list(s)
         prev = 0
+        y_done = False
         for n in range(0,self.n_cars):
+            placed = False
 
-            y_random = random.randint(0,self.n_lanes-1)*self.road_width + self.road_width*0.5
-            if prev == y_random and y_random == 2:
-                y_random = 6
-            elif(prev == y_random and y_random == 6):
-                y_random = 2
-            x_random = alist[n]
-            v_random = random.random()*self.non_ego_limit
-            #print(v_random)
-            if y_random == 6:
-                self.vehicle_list.append(car.Car(x_random+random.random()*300, y_random, -v_random, 0, -speed_limit, self.dt))
-            elif(y_random == 2):
-                self.vehicle_list.append(car.Car(x_random,y_random,v_random,0,speed_limit,self.dt))
-            prev = y_random
+            while placed==False:
+                y_random = random.randint(0,self.n_lanes-1)*self.road_width + self.road_width*0.5
+                if prev == y_random and y_random == 2:
+                    y_random = 6
+                elif(prev == y_random and y_random == 6):
+                    y_random = 2
+                x_random = alist[n]
+                v_random = random.random()*self.non_ego_limit
+                #print(v_random)
+                if y_random == 6 and y_done == False:
+                    self.vehicle_list.append(car.Car(x_random+random.random()*300, y_random, -v_random, 0, -speed_limit, self.dt))
+                    y_done = True
+                    placed = True
+                elif(y_random == 2):
+                    self.vehicle_list.append(car.Car(x_random,y_random,v_random,0,speed_limit,self.dt))
+                    placed = True
+                prev = y_random
+
 
 
     def render(self):
@@ -102,7 +107,7 @@ class World:
         #imscatter(x_cars, y_cars, image_path_cars, zoom=0.03, ax=ax1)
         ax1.grid()
         ax1.set_ylim([1, (lane - 1) * self.road_width + self.road_width * 0.5 + 1])
-        ax1.set_xlim([0,(self.max_timestep*self.dt)*self.speed_limit])
+        ax1.set_xlim([0,2500])
         ax1.set_title("Global Map")
         ax1.set_ylabel("Y-Position in [m]")
         ax1.set_xlabel("X-Position in [m]")
@@ -164,12 +169,15 @@ class World:
             #vehicle.non_ego_motion(acc,0)
             self.vehicle_list[n] = vehicle
 
+
         self.reward = self.reward_function()
 
         self.timestep += 1
 
-        if self.timestep == self.max_timestep:
+        if self.timestep == 600:
             self.done = True
+
+
 
         self.lane_prev = self.lane
 
@@ -249,6 +257,7 @@ class World:
         #acc += random.random()
         return acc
 
+
     def dist_control_reversed(self,id):
 
         alpha =0.5
@@ -287,40 +296,46 @@ class World:
         return acc
 
 
-
     def reward_function(self):
         self.reward = 0
 
-        self.reward -= (self.y_acc**2)*0.1
-        self.reward -= self.x_acc**2 # x_acc
-        self.reward -= (self.speed_limit - self.vehicle_list[0].v)*2
-        self.lateral_dist = self.vehicle_list[0].y - 2
-        self.reward += (1.375 * self.lateral_dist ** 2 - 6.25 * self.lateral_dist + 5)
+        self.reward -= self.y_acc * 0.1
+        #self.reward -= self.x_acc ** 2  # x_acc
+        self.reward -= (self.speed_limit - self.vehicle_list[0].v)
+        if self.vehicle_list[0].v == self.speed_limit:
+            self.reward+1
+        #self.lateral_dist = self.vehicle_list[0].y - 2
+        #self.reward += (1.375 * self.lateral_dist ** 2 - 6.25 * self.lateral_dist + 5)
+        if self.vehicle_list[0].y in {6, 10, 14, 18, 22}:
+            self.reward += 1
+        if self.vehicle_list[0].y == 2:
+            self. reward+= 2
 
         #### Veloccity Delta ####
-        non_ego_avg_v = 0
-        for n in range(0,self.n_cars):
-            non_ego_avg_v += self.vehicle_list[n+1].v
+        #non_ego_avg_v = 0
+        #for n in range(0, self.n_cars):
+        #    non_ego_avg_v += self.vehicle_list[n + 1].v
 
-        non_ego_avg_v = non_ego_avg_v/self.n_cars
+        #non_ego_avg_v = non_ego_avg_v / self.n_cars
 
-        non_ego_delta_v = self.non_ego_limit - non_ego_avg_v
-
+        #non_ego_delta_v = self.non_ego_limit - non_ego_avg_v
 
         ### Add Global part ###
-        self.reward -= 0.1*non_ego_delta_v**2
-
+        #self.reward -= 0.1 * non_ego_delta_v ** 2
 
         vehicle_list_sec = [vehicle for vehicle in self.vehicle_list if self.vehicle_list[0].x < vehicle.x]
 
-        if(len(vehicle_list_sec) == 0 and self.vehicle_list[0].y == (1-1)*self.road_width + self.road_width*0.5):
+        if (len(vehicle_list_sec) == 0 and self.vehicle_list[0].y == (1 - 1) * self.road_width + self.road_width * 0.5):
             self.reward += 1000
-
+            print("Success at timestep:",self.timestep)
             self.done = True
             self.success = True
+        if self.vehicle_list[0].v < 1:
+            self.reward -= 1000
+            print("Fail at timestep:", self.timestep)
+            self.done = True
 
-
-        #print("Reward: ",self.reward)
+        # print("Reward: ",self.reward)
 
         return self.reward
 
